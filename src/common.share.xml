@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-model href="../../../../OpenKNX-Repos/Organization/knxprod-support/knx_project_14/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns:op="http://github.com/OpenKNX/OpenKNXproducer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://knx.org/xml/project/14">
+  <ParameterTypes>
+    <!-- the following ParameterTypes are from a productive example -->
+    <!-- simple integer type -->
+    <ParameterType Id="%AID%_PT-DelaySeconds" Name="DelaySeconds">
+      <TypeNumber SizeInBit="32" Type="signedInt" minInclusive="0" maxInclusive="86400" />
+    </ParameterType>
+    <!-- enumeration with 16-bit (word) values -->
+    <ParameterType Id="%AID%_PT-DelaySelection" Name="DelaySelection">
+      <TypeRestriction Base="Value" SizeInBit="16">
+        <Enumeration Text="1 Sekunde" Value="1" Id="%AID%_PT-DelaySelection_EN-0" />
+        <Enumeration Text="2 Sekunden" Value="2" Id="%AID%_PT-DelaySelection_EN-1" />
+        <Enumeration Text="5 Sekunden" Value="5" Id="%AID%_PT-DelaySelection_EN-2" />
+        <Enumeration Text="10 Sekunden" Value="10" Id="%AID%_PT-DelaySelection_EN-3" />
+        <Enumeration Text="30 Sekunden" Value="30" Id="%AID%_PT-DelaySelection_EN-4" />
+        <Enumeration Text="1 Minute" Value="60" Id="%AID%_PT-DelaySelection_EN-5" />
+        <Enumeration Text="2 Minuten" Value="120" Id="%AID%_PT-DelaySelection_EN-6" />
+        <Enumeration Text="5 Minuten" Value="300" Id="%AID%_PT-DelaySelection_EN-7" />
+        <Enumeration Text="10 Minuten" Value="600" Id="%AID%_PT-DelaySelection_EN-8" />
+        <Enumeration Text="30 Minuten" Value="1800" Id="%AID%_PT-DelaySelection_EN-9" />
+        <Enumeration Text="manuelle Eingabe (Sekundengenau)" Value="0" Id="%AID%_PT-DelaySelection_EN-10" />
+      </TypeRestriction>
+    </ParameterType>
+    <!-- Demo ParameterTypes to show available possibilities  -->
+    <!-- Parameter type for text parameter, just for descriptions in ETS, is not transferred to device -->
+    <ParameterType Id="%AID%_PT-Text40Byte" Name="Text40Byte">
+      <TypeText SizeInBit="320" />
+    </ParameterType>
+    <!-- Parameter type for 1 bit parameter, presented as checkbox -->
+    <ParameterType Id="%AID%_PT-CheckBox" Name="CheckBox">
+      <TypeNumber SizeInBit="1" Type="unsignedInt" minInclusive="0" maxInclusive="1" UIHint="CheckBox" />
+    </ParameterType>
+    <!-- Parameter type for 1 bit parameter, presented as radio button -->
+    <ParameterType Id="%AID%_PT-YesNo" Name="YesNo">
+      <TypeRestriction Base="Value" SizeInBit="1">
+        <Enumeration Text="Nein" Value="0" Id="%AID%_PT-YesNo_EN-0" />
+        <Enumeration Text="Ja" Value="1" Id="%AID%_PT-YesNo_EN-1" />
+      </TypeRestriction>
+    </ParameterType>
+    <!-- Parameter type for an 8 bit percent parameter -->
+    <ParameterType Id="%AID%_PT-Percentage" Name="Percentage">
+      <TypeNumber SizeInBit="8" Type="signedInt" minInclusive="0" maxInclusive="100" />
+    </ParameterType>
+    <!-- Parameter type for an 16 bit float value like temperature -->
+    <ParameterType Id="%AID%_PT-ValueDpt9" Name="ValueDpt9">
+      <TypeFloat Encoding="IEEE-754 Single" minInclusive="-671088" maxInclusive="670760" />
+    </ParameterType>
+  </ParameterTypes>
+  
+  
+  <Parameters>
+    <!-- A parameter to enter manually a number of seconds -->
+    <Parameter Id="%AID%_P-%T%000001" Name="StartupDelay" ParameterType="%AID%_PT-DelaySeconds" Text="        Zeit (Sekundengenau)" SuffixText="Sekunden" Value="1">
+      <!-- offset has always to start with 0 -->
+      <Memory CodeSegment="%AID%_RS-04-00000" Offset="0" BitOffset="0" />
+    </Parameter>
+    <!-- A parameter to choose predefined seconds from a dropdown -->
+    <Parameter Id="%AID%_P-%T%000002" Name="StartupDelaySelection" ParameterType="%AID%_PT-DelaySelection" Text="Zeit bis das Gerät nach einem Neustart aktiv wird" Value="1">
+      <!-- you have to calculate the right offset according to size of the used type -->
+      <Memory CodeSegment="%AID%_RS-04-00000" Offset="4" BitOffset="0" />
+    </Parameter>
+    <!-- A parameter to enter manually a number of seconds -->
+    <Parameter Id="%AID%_P-%T%000003" Name="Heartbeat" ParameterType="%AID%_PT-DelaySeconds" Text="'In Betrieb'-Telegramm senden alle" SuffixText="Sekunden" Value="300">
+      <Memory CodeSegment="%AID%_RS-04-00000" Offset="6" BitOffset="0" />
+    </Parameter>
+  </Parameters>
+  
+  <ParameterRefs>
+    <ParameterRef Id="%AID%_P-%T%000001_R-%T%00000101" RefId="%AID%_P-%T%000001" />
+    <ParameterRef Id="%AID%_P-%T%000002_R-%T%00000201" RefId="%AID%_P-%T%000002" />
+    <ParameterRef Id="%AID%_P-%T%000003_R-%T%00000301" RefId="%AID%_P-%T%000003" />
+  </ParameterRefs>
+  
+  <ComObjectTable>
+    <!-- ComObject sending a 'still alive' signal, DPT 1 (1 bit) -->
+    <ComObject Id="%AID%_O-%T%000001" Name="Heartbeat" Text="In Betrieb" Number="1" FunctionText="Ausgang (zyklisch)" ObjectSize="1 Bit" ReadFlag="Enabled" WriteFlag="Disabled" CommunicationFlag="Enabled" TransmitFlag="Enabled" UpdateFlag="Disabled" ReadOnInitFlag="Disabled" DatapointType="DPST-1-2" />
+  </ComObjectTable>
+  
+  <ComObjectRefs>
+    <ComObjectRef Id="%AID%_O-%T%000001_R-%T%00000101" RefId="%AID%_O-%T%000001" />
+  </ComObjectRefs>
+  
+  <ChannelIndependentBlock>
+    <ParameterRefRef RefId="%AID%_P-%T%000003_R-%T%00000301" />
+    <choose ParamRefId="%AID%_P-%T%000003_R-%T%00000301">
+      <when test="!=0">
+        <ComObjectRefRef RefId="%AID%_O-%T%000001_R-%T%00000101" />
+      </when>
+    </choose>
+    <ParameterRefRef RefId="%AID%_P-%T%000002_R-%T%00000201" />
+    <choose ParamRefId="%AID%_P-%T%000002_R-%T%00000201">
+      <when test="0">
+        <ParameterRefRef RefId="%AID%_P-%T%000001_R-%T%00000101" />
+      </when>
+    </choose>
+  </ChannelIndependentBlock>
+  
+  <Dynamic>
+
+  </Dynamic>
+</KNX>

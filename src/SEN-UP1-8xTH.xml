@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer">
+  <ManufacturerData>
+    <Manufacturer RefId="M-00FA">
+      <Catalog>
+        <CatalogSection Id="M-00FA_CS-OpenKNX" Name="OpenKNX" Number="OpenKNX" DefaultLanguage="de">
+          <CatalogItem Id="%CatalogItemId%" Name="OpenKNX: SEN-UP1-8xTH" Number="1" ProductRefId="%ProductId%" Hardware2ProgramRefId="%Hardware2ProgramId%" DefaultLanguage="de" />
+        </CatalogSection>
+      </Catalog>
+      <ApplicationPrograms>
+        <!-- Each increase of AppliationVersion FORCES the Enduser to update according firmware, too -->
+        <!-- If you just want to have a BUGFIX-Update of the ETS-Appliation (without firmware), increase ApplicationVersion AND ApplicationRevision simultaneously -->
+        <!-- To sync ETS-Application and firmware again, increase ApplicationVersion AND set ApplicationRevision to 0 -->
+        <!-- ApplicationNumber 0xA100: A1 = SirSydom -->
+        <op:version OpenKnxId="0xA1" ApplicationNumber="2" ApplicationVersion="18" ReplacesVersions="0" ApplicationRevision="0" />
+        <ApplicationProgram Id="%AID%" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="SEN-UP1-8xTH" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de" DynamicTableManagement="false" Linkable="true" MinEtsVersion="5.7" ApplicationNumber="0" ApplicationVersion="0" ReplacesVersions="0">
+          <Static>
+            <Code>
+              <RelativeSegment Id="%AID%_RS-04-00000" Name="Parameters" Offset="0" Size="%MemorySize%" LoadStateMachine="4" />
+            </Code>
+            <op:define prefix="LOG" header="SEN-UP1-8xTH.h" NumChannels="30" KoOffset="280" ModuleType="1" />
+            <op:define prefix="THP" header="SEN-UP1-8xTH.h" NumChannels="8" KoOffset="20" ModuleType="2"/>
+            <op:define prefix="BTN" header="SEN-UP1-8xTH.h" NumChannels="16" KoOffset="380" ModuleType="3"/>
+            <ParameterTypes>
+              <!-- generic parameter types from logicmodule -->
+              <op:include href="../lib/OAM-LogicModule/src/Logikmodul.share.xml" xpath="//ParameterTypes/ParameterType" prefix="LOG" />
+              <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ParameterTypes/ParameterType" prefix="THP" />
+              <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.share.xml" xpath="//ParameterTypes/ParameterType" prefix="BTN" />
+              <ParameterType Id="%AID%_PT-BTNInputs" Name="BTNInputs">
+                <TypeRestriction Base="Value" SizeInBit="16">
+                  <Enumeration Text="Externes KO" Value="0" Id="%AID%_PT-BTNInputs_EN-0" />
+                  <Enumeration Text="Sensoreingang A1 (SCL)" Value="50" Id="%AID%_PT-BTNInputs_EN-50" />
+                  <Enumeration Text="Sensoreingang A2 (SDA)" Value="51" Id="%AID%_PT-BTNInputs_EN-51" />
+                  <Enumeration Text="Sensoreingang B1 (SCL)" Value="82" Id="%AID%_PT-BTNInputs_EN-82" />
+                  <Enumeration Text="Sensoreingang B2 (SDA)" Value="83" Id="%AID%_PT-BTNInputs_EN-83" />
+                  <Enumeration Text="Sensoreingang C1 (SCL)" Value="114" Id="%AID%_PT-BTNInputs_EN-114" />
+                  <Enumeration Text="Sensoreingang C2 (SDA)" Value="115" Id="%AID%_PT-BTNInputs_EN-115" />
+                  <Enumeration Text="Sensoreingang D1 (SCL)" Value="146" Id="%AID%_PT-BTNInputs_EN-146" />
+                  <Enumeration Text="Sensoreingang D2 (SDA)" Value="147" Id="%AID%_PT-BTNInputs_EN-147" />
+                  <Enumeration Text="Sensoreingang E1 (SCL)" Value="178" Id="%AID%_PT-BTNInputs_EN-178" />
+                  <Enumeration Text="Sensoreingang E2 (SDA)" Value="179" Id="%AID%_PT-BTNInputs_EN-179" />
+                  <Enumeration Text="Sensoreingang F1 (SCL)" Value="210" Id="%AID%_PT-BTNInputs_EN-210" />
+                  <Enumeration Text="Sensoreingang F2 (SDA)" Value="211" Id="%AID%_PT-BTNInputs_EN-211" />
+                  <Enumeration Text="Sensoreingang G1 (SCL)" Value="242" Id="%AID%_PT-BTNInputs_EN-242" />
+                  <Enumeration Text="Sensoreingang G2 (SDA)" Value="243" Id="%AID%_PT-BTNInputs_EN-243" />
+                  <Enumeration Text="Sensoreingang H1 (SCL)" Value="274" Id="%AID%_PT-BTNInputs_EN-274" />
+                  <Enumeration Text="Sensoreingang H2 (SDA)" Value="275" Id="%AID%_PT-BTNInputs_EN-275" />
+                </TypeRestriction>
+              </ParameterType>
+            </ParameterTypes>
+            
+            <Parameters>
+              <!-- Standard parameter in any of our devices -->
+              <op:include href="../lib/OAM-LogicModule/src/Logikmodul.share.xml" xpath="//Parameters/Parameter|//Parameters/Union" type="parameter" prefix="LOG" />
+              <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//Parameters/Parameter|//Parameters/Union" type="parameter" prefix="THP" />
+              <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.share.xml" xpath="//Parameters/Parameter|//Parameters/Union" type="parameter" prefix="BTN" />
+              <op:include href="../lib/OAM-LogicModule/src/Logikmodul.templ.xml" xpath="//Parameters/Parameter|//Parameters/Union" type="template" prefix="LOG" />
+              <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.templ.xml" xpath="//Parameters/Parameter|//Parameters/Union" type="template" prefix="THP" />
+              <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.templ.xml" xpath="//Parameters/Parameter|//Parameters/Union" type="template" prefix="BTN" />
+            </Parameters>
+
+            <ParameterRefs>
+              <op:include href="../lib/OAM-LogicModule/src/Logikmodul.share.xml" xpath="//ParameterRefs/ParameterRef" prefix="LOG" />
+              <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ParameterRefs/ParameterRef" prefix="THP" />
+              <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.share.xml" xpath="//ParameterRefs/ParameterRef" prefix="BTN" />
+              <op:include href="../lib/OAM-LogicModule/src/Logikmodul.templ.xml" xpath="//ParameterRefs/ParameterRef" type="template" prefix="LOG" />
+              <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.templ.xml" xpath="//ParameterRefs/ParameterRef" type="template" prefix="THP" />
+              <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.templ.xml" xpath="//ParameterRefs/ParameterRef" type="template" prefix="BTN" />
+            </ParameterRefs>
+
+            <ComObjectTable>
+              <op:include href="../lib/OAM-LogicModule/src/Logikmodul.share.xml" xpath="//ComObjectTable/ComObject" prefix="LOG" />
+              <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ComObjectTable/ComObject" prefix="THP" />
+              <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.share.xml" xpath="//ComObjectTable/ComObject" prefix="BTN" />
+              <op:include href="../lib/OAM-LogicModule/src/Logikmodul.templ.xml" xpath="//ComObjectTable/ComObject" type="template" prefix="LOG" />
+              <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.templ.xml" xpath="//ComObjectTable/ComObject" type="template" prefix="THP" />
+              <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.templ.xml" xpath="//ComObjectTable/ComObject" type="template" prefix="BTN" />
+            </ComObjectTable>
+
+            <ComObjectRefs>
+              <op:include href="../lib/OAM-LogicModule/src/Logikmodul.share.xml" xpath="//ComObjectRefs/ComObjectRef" prefix="LOG" />
+              <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ComObjectRefs/ComObjectRef" prefix="THP" />
+              <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.share.xml" xpath="//ComObjectRefs/ComObjectRef" prefix="BTN" />
+              <op:include href="../lib/OAM-LogicModule/src/Logikmodul.templ.xml" xpath="//ComObjectRefs/ComObjectRef" type="template" prefix="LOG" />
+              <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.templ.xml" xpath="//ComObjectRefs/ComObjectRef" type="template" prefix="THP" />
+              <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.templ.xml" xpath="//ComObjectRefs/ComObjectRef" type="template" prefix="BTN" />
+            </ComObjectRefs>
+
+            <AddressTable MaxEntries="2047" />
+            <AssociationTable MaxEntries="2047" />
+            <LoadProcedures>
+              <LoadProcedure MergeId="1">
+                <LdCtrlCompareProp InlineData="%VersionCheck%" ObjIdx="0" PropId="78">
+                  <OnError Cause="CompareMismatch" MessageRef="%AID%_M-1" />
+                </LdCtrlCompareProp>
+              </LoadProcedure>
+              <LoadProcedure MergeId="2">
+                <LdCtrlRelSegment LsmIdx="4" Size="%MemorySize%" Mode="1" Fill="0" AppliesTo="full" />
+                <LdCtrlRelSegment LsmIdx="4" Size="%MemorySize%" Mode="0" Fill="0" AppliesTo="par" />
+              </LoadProcedure>
+              <LoadProcedure MergeId="4">
+                <LdCtrlWriteRelMem ObjIdx="4" Offset="0" Size="%MemorySize%" Verify="true" AppliesTo="full,par" />
+              </LoadProcedure>
+              <LoadProcedure MergeId="7">
+                <LdCtrlLoadImageProp ObjIdx="1" PropId="27" />
+                <LdCtrlLoadImageProp ObjIdx="2" PropId="27" />
+                <LdCtrlLoadImageProp ObjIdx="3" PropId="27" />
+                <LdCtrlLoadImageProp ObjIdx="4" PropId="27" />
+              </LoadProcedure>
+            </LoadProcedures>
+            <Messages>
+              <Message Id="%AID%_M-1" Name="VersionMismatch" Text="Diese Applikaiton benötigt die Firmware-Version %VersionMessage%, siehe Geräteinfo." />
+            </Messages>
+            <Options />
+          </Static>
+          <!-- UI definition -->
+          <Dynamic>
+            <ChannelIndependentBlock>
+              <!-- ChannelIndependentBlock is a composition of different parts of different modules -->
+              <ParameterBlock Id="%AID%_PB-1" Name="General" Text="Allgemeine Parameter">
+                <!-- <op:include href="PMmodul.parts.xml" xpath="//Dynamic/ChannelIndependentBlock/ParameterBlock[@Name='Init']/*" prefix="PM" /> -->
+                <op:include href="../lib/OAM-LogicModule/src/Logikmodul.parts.xml" xpath="//Dynamic/ChannelIndependentBlock/ParameterBlock[@Name='General']/*" prefix="LOG" />
+                <!-- <op:include href="PMmodul.parts.xml" xpath="//Dynamic/ChannelIndependentBlock/ParameterBlock[@Name='Hardware']/*" prefix="PM" /> -->
+                <op:include href="../lib/OAM-LogicModule/src/Logikmodul.parts.xml" xpath="//Dynamic/ChannelIndependentBlock/ParameterBlock[@Name='Diagnose']/*" prefix="LOG" />
+              </ParameterBlock>
+            </ChannelIndependentBlock>
+            <Channel Id="%AID%_CH-4" Name="THPChannels" Number="4" Text="Sensor-Kanäle">
+              <!-- Sensor channel independent settings -->
+              <!--
+              <ParameterBlock Id="%AID%_PB-2" Name="Sensor-Kanäle" Text="Allgemeine Parameter">
+                <op:include href="THPSensor.share.xml" xpath="//ChannelIndependentBlock/*" prefix="THP" />
+                <op:include href="THPSensor.templ.xml" xpath="//ChannelIndependentBlock/ParameterBlock[@Name='General']/*" type="template" prefix="THP" />
+              </ParameterBlock>
+              -->
+              <!-- Sensor channel settings -->
+
+              <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.templ.xml" xpath="//Dynamic/ChannelIndependentBlock/*" type="template" prefix="THP" />
+              
+            </Channel>
+            <Channel Name="Logikkanaele" Text="Logikkanäle" Number="5" Id="%AID%_CH-5">
+              <!-- compose logicmodule channel from some static blocks... -->
+              <op:include href="../lib/OAM-LogicModule/src/Logikmodul.share.xml" xpath="//Dynamic/Channel/*" prefix="LOG" />
+              <!-- followed by all logic channels -->
+              <op:include href="../lib/OAM-LogicModule/src/Logikmodul.templ.xml" xpath="//Dynamic/ChannelIndependentBlock/*" type="template" prefix="LOG" />
+            </Channel>
+            <Channel Id="%AID%_CH-6" Name="BTNS" Number="4" Text="VirtualButton">
+              <!-- BTN channel independent settings -->
+              <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.share.xml" xpath="//Dynamic/Channel/*" prefix="BTN" />
+              <!-- BTN channel settings -->
+              <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.templ.xml" xpath="//Dynamic/ChannelIndependentBlock/*" type="template" prefix="BTN" />
+            </Channel>
+          </Dynamic>
+        </ApplicationProgram>
+      </ApplicationPrograms>
+      <Hardware>
+        <Hardware Id="%HardwareId%" Name="SEN-UP1-8xTH" SerialNumber="A10101" VersionNumber="1" BusCurrent="10" HasIndividualAddress="true" HasApplicationProgram="true">
+          <Products>
+            <Product Id="%ProductId%" Text="OpenKNX: SEN-UP1-8xTH" OrderNumber="SEN-UP1-8xTH" IsRailMounted="false" DefaultLanguage="de">
+              <RegistrationInfo RegistrationStatus="Registered" />
+            </Product>
+          </Products>
+          <Hardware2Programs>
+            <Hardware2Program Id="%Hardware2ProgramId%" MediumTypes="MT-0">
+              <ApplicationProgramRef RefId="%AID%" />
+              <RegistrationInfo RegistrationStatus="Registered" RegistrationNumber="0001/11" />
+            </Hardware2Program>
+          </Hardware2Programs>
+        </Hardware>
+      </Hardware>
+    </Manufacturer>
+  </ManufacturerData>
+</KNX>
