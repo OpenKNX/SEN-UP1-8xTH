@@ -1777,7 +1777,7 @@
 
 // Parameter per channel
 #define THP_ParamBlockOffset 2610
-#define THP_ParamBlockSize 86
+#define THP_ParamBlockSize 89
 #define THP_ParamCalcIndex(index) (index + THP_ParamBlockOffset + _channelIndex * THP_ParamBlockSize)
 
 #define THP_Sensortype_                0      // 8 Bits, Bit 7-0
@@ -1837,7 +1837,7 @@
 #define THP_Input1ActionClosed_       72      // 1 Bit, Bit 6
 #define     THP_Input1ActionClosed_Mask 0x40
 #define     THP_Input1ActionClosed_Shift 6
-#define THP_Input1SendCycle_          73      // 8 Bits, Bit 7-0
+#define THP_Input1SendCycle_          88      // 8 Bits, Bit 7-0
 
 // Sensor %Z%
 #define ParamTHP_Sensortype_               (knx.paramByte(THP_ParamCalcIndex(THP_Sensortype_)))
@@ -2031,7 +2031,7 @@
 #define BTN_ChannelCount 16
 
 // Parameter per channel
-#define BTN_ParamBlockOffset 3298
+#define BTN_ParamBlockOffset 3322
 #define BTN_ParamBlockSize 51
 #define BTN_ParamCalcIndex(index) (index + BTN_ParamBlockOffset + _channelIndex * BTN_ParamBlockSize)
 
@@ -2590,6 +2590,6 @@
 #define KoBTN_ChannelOutput6            (knx.getGroupObject(BTN_KoCalcNumber(BTN_KoChannelOutput6)))
 
 #define MAIN_OpenKnxId 0xA1
-#define MAIN_ApplicationNumber 2
-#define MAIN_ApplicationVersion 18
+#define MAIN_ApplicationNumber 3
+#define MAIN_ApplicationVersion 2
 #define MAIN_OrderNumber "SEN-UP1-8xTH"

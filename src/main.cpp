@@ -32,7 +32,7 @@ void loop()
 
 /*
 // ToDos:
-- channel base class
-- logging
+- Save Min/Max to Flash
 - DS18B20 +  BI
+- 2x DS18B20 (Hum Par/KO überladen)
 */
