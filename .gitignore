@@ -6,5 +6,4 @@
 .vscode/launch.json
 .vscode/ipch
 **/*.knxprod
-**/*.debug.xml
 release/*
