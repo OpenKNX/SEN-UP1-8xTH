@@ -1782,6 +1782,7 @@
 
 #define THP_Sensortype_                0      // 8 Bits, Bit 7-0
 #define THP_SensorTemperatureSendChangeAmount_  1      // float
+#define THP_SensorTemperatureSendChangeAmountInactive_  1      // float
 #define THP_SensorTemperatureSendCycle_  5      // 8 Bits, Bit 7-0
 #define THP_SensorTemperatureAlign_    6      // float
 #define THP_SensorTemperatureWarnL_   10      // float
@@ -1843,6 +1844,8 @@
 #define ParamTHP_Sensortype_               (knx.paramByte(THP_ParamCalcIndex(THP_Sensortype_)))
 //      von mehr als
 #define ParamTHP_SensorTemperatureSendChangeAmount_ (knx.paramFloat(THP_ParamCalcIndex(THP_SensorTemperatureSendChangeAmount_), Float_Enc_IEEE754Single))
+// 
+#define ParamTHP_SensorTemperatureSendChangeAmountInactive_ (knx.paramFloat(THP_ParamCalcIndex(THP_SensorTemperatureSendChangeAmountInactive_), Float_Enc_IEEE754Single))
 // Zyklisch senden alle
 #define ParamTHP_SensorTemperatureSendCycle_ (knx.paramByte(THP_ParamCalcIndex(THP_SensorTemperatureSendCycle_)))
 // Messwert kalibrieren
@@ -2591,5 +2594,5 @@
 
 #define MAIN_OpenKnxId 0xA1
 #define MAIN_ApplicationNumber 3
-#define MAIN_ApplicationVersion 3
+#define MAIN_ApplicationVersion 4
 #define MAIN_OrderNumber "SEN-UP1-8xTH"
