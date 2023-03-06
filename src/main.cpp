@@ -33,6 +33,6 @@ void loop()
 /*
 // ToDos:
 - Save Min/Max to Flash
-- DS18B20 +  BI
-- 2x DS18B20 (Hum Par/KO überladen)
+- 2x DS18B20 (Hum Par/KO überladen OK, HWSensorchannel DS18B20 liefert auch humidity)
+- Testfälle: Sensoren abziehen, anstecken, nicht vorhanden
 */
