@@ -2671,5 +2671,5 @@
 
 #define MAIN_OpenKnxId 0xA1
 #define MAIN_ApplicationNumber 3
-#define MAIN_ApplicationVersion 8
+#define MAIN_ApplicationVersion 9
 #define MAIN_OrderNumber "SEN-UP1-8xTH"
