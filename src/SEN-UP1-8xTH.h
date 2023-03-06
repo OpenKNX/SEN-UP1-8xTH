@@ -1777,91 +1777,140 @@
 
 // Parameter per channel
 #define THP_ParamBlockOffset 2610
-#define THP_ParamBlockSize 89
+#define THP_ParamBlockSize 92
 #define THP_ParamCalcIndex(index) (index + THP_ParamBlockOffset + _channelIndex * THP_ParamBlockSize)
 
 #define THP_Sensortype_                0      // 8 Bits, Bit 7-0
-#define THP_SensorTemperatureSendChangeAmount_  1      // float
-#define THP_SensorTemperatureSendChangeAmountInactive_  1      // float
-#define THP_SensorTemperatureSendCycle_  5      // 8 Bits, Bit 7-0
-#define THP_SensorTemperatureAlign_    6      // float
-#define THP_SensorTemperatureWarnL_   10      // float
-#define THP_SensorTemperatureWarnH_   14      // float
-#define THP_SensorTemperatureMinMax_  18      // 1 Bit, Bit 7
-#define     THP_SensorTemperatureMinMax_Mask 0x80
-#define     THP_SensorTemperatureMinMax_Shift 7
-#define THP_SensorHumiditySendChangeAmount_ 19      // float
-#define THP_SensorHumiditySendCycle_  23      // 8 Bits, Bit 7-0
-#define THP_SensorHumidityAlign_      24      // float
-#define THP_SensorHumidityWarnL_      28      // float
-#define THP_SensorHumidityWarnH_      32      // float
-#define THP_SensorHumidityMinMax_     18      // 1 Bit, Bit 6
-#define     THP_SensorHumidityMinMax_Mask 0x40
-#define     THP_SensorHumidityMinMax_Shift 6
-#define THP_SensorHumiditySend_       36      // 8 Bits, Bit 7-0
-#define THP_SensorAbsHumiditySendChangeAmount_ 37      // float
-#define THP_SensorAbsHumiditySendCycle_ 41      // 8 Bits, Bit 7-0
-#define THP_SensorAbsHumidityAlign_   42      // float
-#define THP_SensorAbsHumidityWarnL_   46      // float
-#define THP_SensorAbsHumidityWarnH_   50      // float
-#define THP_SensorAbsHumidityMinMax_  18      // 1 Bit, Bit 5
+#define THP_SensorTemperatureSendChange_  1      // 1 Bit, Bit 7
+#define     THP_SensorTemperatureSendChange_Mask 0x80
+#define     THP_SensorTemperatureSendChange_Shift 7
+#define THP_SensorTemperatureSendChangeAmount_  2      // float
+#define THP_SensorTemperatureSendCycle_  6      // 8 Bits, Bit 7-0
+#define THP_SensorTemperatureAlign_    7      // float
+#define THP_SensorTemperatureWarn_     1      // 1 Bit, Bit 6
+#define     THP_SensorTemperatureWarn_Mask 0x40
+#define     THP_SensorTemperatureWarn_Shift 6
+#define THP_SensorTemperatureWarnL_   11      // float
+#define THP_SensorTemperatureWarnH_   15      // float
+#define THP_SensorTemperatureMinMax_   1      // 1 Bit, Bit 5
+#define     THP_SensorTemperatureMinMax_Mask 0x20
+#define     THP_SensorTemperatureMinMax_Shift 5
+#define THP_SensorHumiditySendChange_ 19      // 1 Bit, Bit 7
+#define     THP_SensorHumiditySendChange_Mask 0x80
+#define     THP_SensorHumiditySendChange_Shift 7
+#define THP_SensorHumiditySendChangeAmount_ 20      // float
+#define THP_SensorHumiditySendCycle_  24      // 8 Bits, Bit 7-0
+#define THP_SensorHumidityAlign_      25      // float
+#define THP_SensorHumidityWarn_       19      // 1 Bit, Bit 6
+#define     THP_SensorHumidityWarn_Mask 0x40
+#define     THP_SensorHumidityWarn_Shift 6
+#define THP_SensorHumidityWarnL_      29      // float
+#define THP_SensorHumidityWarnH_      33      // float
+#define THP_SensorHumidityMinMax_     19      // 1 Bit, Bit 5
+#define     THP_SensorHumidityMinMax_Mask 0x20
+#define     THP_SensorHumidityMinMax_Shift 5
+#define THP_SensorHumiditySend_       38      // 8 Bits, Bit 7-0
+#define THP_SensorTemperature2SendChange_ 19      // 1 Bit, Bit 7
+#define     THP_SensorTemperature2SendChange_Mask 0x80
+#define     THP_SensorTemperature2SendChange_Shift 7
+#define THP_SensorTemperature2SendChangeAmount_ 20      // float
+#define THP_SensorTemperature2SendCycle_ 24      // 8 Bits, Bit 7-0
+#define THP_SensorTemperature2Align_  25      // float
+#define THP_SensorTemperature2Warn_   19      // 1 Bit, Bit 6
+#define     THP_SensorTemperature2Warn_Mask 0x40
+#define     THP_SensorTemperature2Warn_Shift 6
+#define THP_SensorTemperature2WarnL_  29      // float
+#define THP_SensorTemperature2WarnH_  33      // float
+#define THP_SensorTemperature2MinMax_ 19      // 1 Bit, Bit 5
+#define     THP_SensorTemperature2MinMax_Mask 0x20
+#define     THP_SensorTemperature2MinMax_Shift 5
+#define THP_SensorAbsHumiditySendChange_ 38      // 1 Bit, Bit 7
+#define     THP_SensorAbsHumiditySendChange_Mask 0x80
+#define     THP_SensorAbsHumiditySendChange_Shift 7
+#define THP_SensorAbsHumiditySendChangeAmount_ 39      // float
+#define THP_SensorAbsHumiditySendCycle_ 43      // 8 Bits, Bit 7-0
+#define THP_SensorAbsHumidityAlign_   44      // float
+#define THP_SensorAbsHumidityWarn_    38      // 1 Bit, Bit 6
+#define     THP_SensorAbsHumidityWarn_Mask 0x40
+#define     THP_SensorAbsHumidityWarn_Shift 6
+#define THP_SensorAbsHumidityWarnL_   48      // float
+#define THP_SensorAbsHumidityWarnH_   52      // float
+#define THP_SensorAbsHumidityMinMax_  38      // 1 Bit, Bit 5
 #define     THP_SensorAbsHumidityMinMax_Mask 0x20
 #define     THP_SensorAbsHumidityMinMax_Shift 5
-#define THP_SensorDewPointSendChangeAmount_ 54      // float
-#define THP_SensorDewPointSendCycle_  58      // 8 Bits, Bit 7-0
-#define THP_SensorDewPointAlign_      59      // float
-#define THP_SensorDewPointWarnL_      63      // float
-#define THP_SensorDewPointWarnH_      67      // float
-#define THP_SensorDewPointMinMax_     18      // 1 Bit, Bit 4
-#define     THP_SensorDewPointMinMax_Mask 0x10
-#define     THP_SensorDewPointMinMax_Shift 4
-#define THP_SensorPressureSendChangeAmount_ 71      // float
-#define THP_SensorPressureSendCycle_  75      // 8 Bits, Bit 7-0
-#define THP_SensorPressureAlign_      76      // float
-#define THP_SensorPressureWarnL_      80      // float
-#define THP_SensorPressureWarnH_      84      // float
-#define THP_SensorPressureMinMax_     18      // 1 Bit, Bit 3
-#define     THP_SensorPressureMinMax_Mask 0x08
-#define     THP_SensorPressureMinMax_Shift 3
-#define THP_Input0DebounceTime_       54      // 8 Bits, Bit 7-0
-#define THP_Input0ActionOpen_         55      // 1 Bit, Bit 7
+#define THP_SensorDewPointSendChange_ 56      // 1 Bit, Bit 7
+#define     THP_SensorDewPointSendChange_Mask 0x80
+#define     THP_SensorDewPointSendChange_Shift 7
+#define THP_SensorDewPointSendChangeAmount_ 57      // float
+#define THP_SensorDewPointSendCycle_  61      // 8 Bits, Bit 7-0
+#define THP_SensorDewPointAlign_      62      // float
+#define THP_SensorDewPointWarn_       56      // 1 Bit, Bit 6
+#define     THP_SensorDewPointWarn_Mask 0x40
+#define     THP_SensorDewPointWarn_Shift 6
+#define THP_SensorDewPointWarnL_      66      // float
+#define THP_SensorDewPointWarnH_      70      // float
+#define THP_SensorDewPointMinMax_     56      // 1 Bit, Bit 5
+#define     THP_SensorDewPointMinMax_Mask 0x20
+#define     THP_SensorDewPointMinMax_Shift 5
+#define THP_Input0DebounceTime_       56      // 8 Bits, Bit 7-0
+#define THP_Input0ActionOpen_         57      // 1 Bit, Bit 7
 #define     THP_Input0ActionOpen_Mask 0x80
 #define     THP_Input0ActionOpen_Shift 7
-#define THP_Input0ActionClosed_       55      // 1 Bit, Bit 6
+#define THP_Input0ActionClosed_       57      // 1 Bit, Bit 6
 #define     THP_Input0ActionClosed_Mask 0x40
 #define     THP_Input0ActionClosed_Shift 6
-#define THP_Input0SendCycle_          56      // 8 Bits, Bit 7-0
-#define THP_Input1DebounceTime_       71      // 8 Bits, Bit 7-0
-#define THP_Input1ActionOpen_         72      // 1 Bit, Bit 7
+#define THP_Input0SendCycle_          58      // 8 Bits, Bit 7-0
+#define THP_SensorPressureSendChange_ 74      // 1 Bit, Bit 7
+#define     THP_SensorPressureSendChange_Mask 0x80
+#define     THP_SensorPressureSendChange_Shift 7
+#define THP_SensorPressureSendChangeAmount_ 75      // float
+#define THP_SensorPressureSendCycle_  79      // 8 Bits, Bit 7-0
+#define THP_SensorPressureAlign_      80      // float
+#define THP_SensorPressureWarn_       74      // 1 Bit, Bit 6
+#define     THP_SensorPressureWarn_Mask 0x40
+#define     THP_SensorPressureWarn_Shift 6
+#define THP_SensorPressureWarnL_      84      // float
+#define THP_SensorPressureWarnH_      88      // float
+#define THP_SensorPressureMinMax_     74      // 1 Bit, Bit 5
+#define     THP_SensorPressureMinMax_Mask 0x20
+#define     THP_SensorPressureMinMax_Shift 5
+#define THP_Input1DebounceTime_       74      // 8 Bits, Bit 7-0
+#define THP_Input1ActionOpen_         75      // 1 Bit, Bit 7
 #define     THP_Input1ActionOpen_Mask 0x80
 #define     THP_Input1ActionOpen_Shift 7
-#define THP_Input1ActionClosed_       72      // 1 Bit, Bit 6
+#define THP_Input1ActionClosed_       75      // 1 Bit, Bit 6
 #define     THP_Input1ActionClosed_Mask 0x40
 #define     THP_Input1ActionClosed_Shift 6
-#define THP_Input1SendCycle_          88      // 8 Bits, Bit 7-0
+#define THP_Input1SendCycle_          76      // 8 Bits, Bit 7-0
 
 // Sensor %Z%
 #define ParamTHP_Sensortype_               (knx.paramByte(THP_ParamCalcIndex(THP_Sensortype_)))
+// Senden bei Änderung
+#define ParamTHP_SensorTemperatureSendChange_ ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorTemperatureSendChange_)) & THP_SensorTemperatureSendChange_Mask))
 //      von mehr als
 #define ParamTHP_SensorTemperatureSendChangeAmount_ (knx.paramFloat(THP_ParamCalcIndex(THP_SensorTemperatureSendChangeAmount_), Float_Enc_IEEE754Single))
-// INAKTIV
-#define ParamTHP_SensorTemperatureSendChangeAmountInactive_ (knx.paramFloat(THP_ParamCalcIndex(THP_SensorTemperatureSendChangeAmountInactive_), Float_Enc_IEEE754Single))
 // Zyklisch senden alle
 #define ParamTHP_SensorTemperatureSendCycle_ (knx.paramByte(THP_ParamCalcIndex(THP_SensorTemperatureSendCycle_)))
 // Messwert kalibrieren
 #define ParamTHP_SensorTemperatureAlign_   (knx.paramFloat(THP_ParamCalcIndex(THP_SensorTemperatureAlign_), Float_Enc_IEEE754Single))
+// Alarme senden
+#define ParamTHP_SensorTemperatureWarn_    ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorTemperatureWarn_)) & THP_SensorTemperatureWarn_Mask))
 //    bei Unterschreiten von
 #define ParamTHP_SensorTemperatureWarnL_   (knx.paramFloat(THP_ParamCalcIndex(THP_SensorTemperatureWarnL_), Float_Enc_IEEE754Single))
 //    bei Überschreiten von
 #define ParamTHP_SensorTemperatureWarnH_   (knx.paramFloat(THP_ParamCalcIndex(THP_SensorTemperatureWarnH_), Float_Enc_IEEE754Single))
 // Min/Max Werte erfassen
 #define ParamTHP_SensorTemperatureMinMax_  ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorTemperatureMinMax_)) & THP_SensorTemperatureMinMax_Mask))
+// Senden bei Änderung
+#define ParamTHP_SensorHumiditySendChange_ ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorHumiditySendChange_)) & THP_SensorHumiditySendChange_Mask))
 //      von mehr als
 #define ParamTHP_SensorHumiditySendChangeAmount_ (knx.paramFloat(THP_ParamCalcIndex(THP_SensorHumiditySendChangeAmount_), Float_Enc_IEEE754Single))
 // Zyklisch senden alle
 #define ParamTHP_SensorHumiditySendCycle_  (knx.paramByte(THP_ParamCalcIndex(THP_SensorHumiditySendCycle_)))
 // Messwert kalibrieren
 #define ParamTHP_SensorHumidityAlign_      (knx.paramFloat(THP_ParamCalcIndex(THP_SensorHumidityAlign_), Float_Enc_IEEE754Single))
+// Alarme senden
+#define ParamTHP_SensorHumidityWarn_       ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorHumidityWarn_)) & THP_SensorHumidityWarn_Mask))
 //    bei Unterschreiten von
 #define ParamTHP_SensorHumidityWarnL_      (knx.paramFloat(THP_ParamCalcIndex(THP_SensorHumidityWarnL_), Float_Enc_IEEE754Single))
 //    bei Überschreiten von
@@ -1870,42 +1919,54 @@
 #define ParamTHP_SensorHumidityMinMax_     ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorHumidityMinMax_)) & THP_SensorHumidityMinMax_Mask))
 // Wert senden als
 #define ParamTHP_SensorHumiditySend_       (knx.paramByte(THP_ParamCalcIndex(THP_SensorHumiditySend_)))
+// Senden bei Änderung
+#define ParamTHP_SensorTemperature2SendChange_ ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorTemperature2SendChange_)) & THP_SensorTemperature2SendChange_Mask))
+//      von mehr als
+#define ParamTHP_SensorTemperature2SendChangeAmount_ (knx.paramFloat(THP_ParamCalcIndex(THP_SensorTemperature2SendChangeAmount_), Float_Enc_IEEE754Single))
+// Zyklisch senden alle
+#define ParamTHP_SensorTemperature2SendCycle_ (knx.paramByte(THP_ParamCalcIndex(THP_SensorTemperature2SendCycle_)))
+// Messwert kalibrieren
+#define ParamTHP_SensorTemperature2Align_  (knx.paramFloat(THP_ParamCalcIndex(THP_SensorTemperature2Align_), Float_Enc_IEEE754Single))
+// Alarme senden
+#define ParamTHP_SensorTemperature2Warn_   ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorTemperature2Warn_)) & THP_SensorTemperature2Warn_Mask))
+//    bei Unterschreiten von
+#define ParamTHP_SensorTemperature2WarnL_  (knx.paramFloat(THP_ParamCalcIndex(THP_SensorTemperature2WarnL_), Float_Enc_IEEE754Single))
+//    bei Überschreiten von
+#define ParamTHP_SensorTemperature2WarnH_  (knx.paramFloat(THP_ParamCalcIndex(THP_SensorTemperature2WarnH_), Float_Enc_IEEE754Single))
+// Min/Max Werte erfassen
+#define ParamTHP_SensorTemperature2MinMax_ ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorTemperature2MinMax_)) & THP_SensorTemperature2MinMax_Mask))
+// Senden bei Änderung
+#define ParamTHP_SensorAbsHumiditySendChange_ ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorAbsHumiditySendChange_)) & THP_SensorAbsHumiditySendChange_Mask))
 //      von mehr als
 #define ParamTHP_SensorAbsHumiditySendChangeAmount_ (knx.paramFloat(THP_ParamCalcIndex(THP_SensorAbsHumiditySendChangeAmount_), Float_Enc_IEEE754Single))
 // Zyklisch senden alle
 #define ParamTHP_SensorAbsHumiditySendCycle_ (knx.paramByte(THP_ParamCalcIndex(THP_SensorAbsHumiditySendCycle_)))
 // Messwert kalibrieren
 #define ParamTHP_SensorAbsHumidityAlign_   (knx.paramFloat(THP_ParamCalcIndex(THP_SensorAbsHumidityAlign_), Float_Enc_IEEE754Single))
+// Alarme senden
+#define ParamTHP_SensorAbsHumidityWarn_    ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorAbsHumidityWarn_)) & THP_SensorAbsHumidityWarn_Mask))
 //    bei Unterschreiten von
 #define ParamTHP_SensorAbsHumidityWarnL_   (knx.paramFloat(THP_ParamCalcIndex(THP_SensorAbsHumidityWarnL_), Float_Enc_IEEE754Single))
 //    bei Überschreiten von
 #define ParamTHP_SensorAbsHumidityWarnH_   (knx.paramFloat(THP_ParamCalcIndex(THP_SensorAbsHumidityWarnH_), Float_Enc_IEEE754Single))
 // Min/Max Werte erfassen
 #define ParamTHP_SensorAbsHumidityMinMax_  ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorAbsHumidityMinMax_)) & THP_SensorAbsHumidityMinMax_Mask))
+// Senden bei Änderung
+#define ParamTHP_SensorDewPointSendChange_ ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorDewPointSendChange_)) & THP_SensorDewPointSendChange_Mask))
 //      von mehr als
 #define ParamTHP_SensorDewPointSendChangeAmount_ (knx.paramFloat(THP_ParamCalcIndex(THP_SensorDewPointSendChangeAmount_), Float_Enc_IEEE754Single))
 // Zyklisch senden alle
 #define ParamTHP_SensorDewPointSendCycle_  (knx.paramByte(THP_ParamCalcIndex(THP_SensorDewPointSendCycle_)))
 // Messwert kalibrieren
 #define ParamTHP_SensorDewPointAlign_      (knx.paramFloat(THP_ParamCalcIndex(THP_SensorDewPointAlign_), Float_Enc_IEEE754Single))
+// Alarme senden
+#define ParamTHP_SensorDewPointWarn_       ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorDewPointWarn_)) & THP_SensorDewPointWarn_Mask))
 //    bei Unterschreiten von
 #define ParamTHP_SensorDewPointWarnL_      (knx.paramFloat(THP_ParamCalcIndex(THP_SensorDewPointWarnL_), Float_Enc_IEEE754Single))
 //    bei Überschreiten von
 #define ParamTHP_SensorDewPointWarnH_      (knx.paramFloat(THP_ParamCalcIndex(THP_SensorDewPointWarnH_), Float_Enc_IEEE754Single))
 // Min/Max Werte erfassen
 #define ParamTHP_SensorDewPointMinMax_     ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorDewPointMinMax_)) & THP_SensorDewPointMinMax_Mask))
-//      von mehr als
-#define ParamTHP_SensorPressureSendChangeAmount_ (knx.paramFloat(THP_ParamCalcIndex(THP_SensorPressureSendChangeAmount_), Float_Enc_IEEE754Single))
-// Zyklisch senden alle
-#define ParamTHP_SensorPressureSendCycle_  (knx.paramByte(THP_ParamCalcIndex(THP_SensorPressureSendCycle_)))
-// Messwert kalibrieren
-#define ParamTHP_SensorPressureAlign_      (knx.paramFloat(THP_ParamCalcIndex(THP_SensorPressureAlign_), Float_Enc_IEEE754Single))
-//    bei Unterschreiten von
-#define ParamTHP_SensorPressureWarnL_      (knx.paramFloat(THP_ParamCalcIndex(THP_SensorPressureWarnL_), Float_Enc_IEEE754Single))
-//    bei Überschreiten von
-#define ParamTHP_SensorPressureWarnH_      (knx.paramFloat(THP_ParamCalcIndex(THP_SensorPressureWarnH_), Float_Enc_IEEE754Single))
-// Min/Max Werte erfassen
-#define ParamTHP_SensorPressureMinMax_     ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorPressureMinMax_)) & THP_SensorPressureMinMax_Mask))
 // Entprellung
 #define ParamTHP_Input0DebounceTime_       (knx.paramByte(THP_ParamCalcIndex(THP_Input0DebounceTime_)))
 // Geöffnet
@@ -1914,6 +1975,22 @@
 #define ParamTHP_Input0ActionClosed_       ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_Input0ActionClosed_)) & THP_Input0ActionClosed_Mask))
 // Zyklisch senden alle
 #define ParamTHP_Input0SendCycle_          (knx.paramByte(THP_ParamCalcIndex(THP_Input0SendCycle_)))
+// Senden bei Änderung
+#define ParamTHP_SensorPressureSendChange_ ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorPressureSendChange_)) & THP_SensorPressureSendChange_Mask))
+//      von mehr als
+#define ParamTHP_SensorPressureSendChangeAmount_ (knx.paramFloat(THP_ParamCalcIndex(THP_SensorPressureSendChangeAmount_), Float_Enc_IEEE754Single))
+// Zyklisch senden alle
+#define ParamTHP_SensorPressureSendCycle_  (knx.paramByte(THP_ParamCalcIndex(THP_SensorPressureSendCycle_)))
+// Messwert kalibrieren
+#define ParamTHP_SensorPressureAlign_      (knx.paramFloat(THP_ParamCalcIndex(THP_SensorPressureAlign_), Float_Enc_IEEE754Single))
+// Alarme senden
+#define ParamTHP_SensorPressureWarn_       ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorPressureWarn_)) & THP_SensorPressureWarn_Mask))
+//    bei Unterschreiten von
+#define ParamTHP_SensorPressureWarnL_      (knx.paramFloat(THP_ParamCalcIndex(THP_SensorPressureWarnL_), Float_Enc_IEEE754Single))
+//    bei Überschreiten von
+#define ParamTHP_SensorPressureWarnH_      (knx.paramFloat(THP_ParamCalcIndex(THP_SensorPressureWarnH_), Float_Enc_IEEE754Single))
+// Min/Max Werte erfassen
+#define ParamTHP_SensorPressureMinMax_     ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_SensorPressureMinMax_)) & THP_SensorPressureMinMax_Mask))
 // Entprellung
 #define ParamTHP_Input1DebounceTime_       (knx.paramByte(THP_ParamCalcIndex(THP_Input1DebounceTime_)))
 // Geöffnet
@@ -2034,7 +2111,7 @@
 #define BTN_ChannelCount 16
 
 // Parameter per channel
-#define BTN_ParamBlockOffset 3322
+#define BTN_ParamBlockOffset 3346
 #define BTN_ParamBlockSize 51
 #define BTN_ParamCalcIndex(index) (index + BTN_ParamBlockOffset + _channelIndex * BTN_ParamBlockSize)
 
@@ -2594,5 +2671,5 @@
 
 #define MAIN_OpenKnxId 0xA1
 #define MAIN_ApplicationNumber 3
-#define MAIN_ApplicationVersion 6
+#define MAIN_ApplicationVersion 8
 #define MAIN_OrderNumber "SEN-UP1-8xTH"
