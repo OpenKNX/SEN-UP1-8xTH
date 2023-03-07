@@ -13,7 +13,7 @@
         <!-- If you just want to have a BUGFIX-Update of the ETS-Appliation (without firmware), increase ApplicationVersion AND ApplicationRevision simultaneously -->
         <!-- To sync ETS-Application and firmware again, increase ApplicationVersion AND set ApplicationRevision to 0 -->
         <!-- ApplicationNumber 0xA100: A1 = SirSydom -->
-        <op:version OpenKnxId="0xA1" ApplicationNumber="3" ApplicationVersion="9" ReplacesVersions="8" ApplicationRevision="0" />
+        <op:version OpenKnxId="0xA1" ApplicationNumber="3" ApplicationVersion="10" ReplacesVersions="8 9" ApplicationRevision="0" />
         <ApplicationProgram Id="%AID%" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="SEN-UP1-8xTH (Dev)" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de" DynamicTableManagement="false" Linkable="true" MinEtsVersion="5.7" ApplicationNumber="0" ApplicationVersion="0" ReplacesVersions="0">
           <Static>
             <Code>
