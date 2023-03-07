@@ -32,7 +32,11 @@ void loop()
 
 /*
 // ToDos:
-- Save Min/Max to Flash
-- 2x DS18B20 (Hum Par/KO überladen OK, HWSensorchannel DS18B20 liefert auch humidity)
+- Save Min/Max to Flash: Module: OK, Sensorchannel: Todo
+
 - Testfälle: Sensoren abziehen, anstecken, nicht vorhanden
+
+    Serial1.setFIFOSize(64);
+    LARGE EEPROM Simulation
+    => buffer overrun / progging
 */
