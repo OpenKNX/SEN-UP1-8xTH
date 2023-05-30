@@ -7,3 +7,4 @@
 .vscode/ipch
 **/*.knxprod
 release/*
+/src/SEN-UP1-8xTH.baggages
