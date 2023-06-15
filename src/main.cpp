@@ -2,6 +2,7 @@
 #include "Logic.h"
 #include "THPSensorModule.h"
 #include "VirtualButtonModule.h"
+#include "UpdaterModule.h"
 
 void setup()
 {
@@ -22,6 +23,7 @@ void setup()
     openknx.addModule(3, new VirtualButtonModule());
     openknx.addModule(2, new THPSensorModule(THPSensorGpioPins));
     openknx.addModule(1, new Logic());
+    openknx.addModule(9, new UpdaterModule());
     openknx.setup();
 }
 
@@ -38,6 +40,9 @@ void loop1()
 /*
 // ToDos:
 - Save Min/Max to Flash: Module: OK, Sensorchannel: Todo
+- Add Updater
+- Add Sensor-Value Output in Console
+
 
 - Testfälle: Sensoren abziehen, anstecken, nicht vorhanden
 
