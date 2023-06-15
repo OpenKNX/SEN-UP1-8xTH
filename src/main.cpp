@@ -30,6 +30,11 @@ void loop()
     openknx.loop();
 }
 
+void loop1()
+{
+    openknx.loop1();
+}
+
 /*
 // ToDos:
 - Save Min/Max to Flash: Module: OK, Sensorchannel: Todo
