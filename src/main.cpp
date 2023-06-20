@@ -42,8 +42,5 @@ void loop1()
 
 - Add Sensor-Value Output in Console
 - Testfälle: Sensoren abziehen, anstecken, nicht vorhanden
-
-    Serial1.setFIFOSize(64);
-    LARGE EEPROM Simulation
-    => buffer overrun / progging
+- change knx branch when fix is in main
 */
