@@ -39,11 +39,8 @@ void loop1()
 
 /*
 // ToDos:
-- Save Min/Max to Flash: Module: OK, Sensorchannel: Todo
-- Add Updater
+
 - Add Sensor-Value Output in Console
-
-
 - Testfälle: Sensoren abziehen, anstecken, nicht vorhanden
 
     Serial1.setFIFOSize(64);

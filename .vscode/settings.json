@@ -5,6 +5,8 @@
     },
     "cmake.configureOnOpen": false,
     "files.associations": {
-        "new": "cpp"
+        "new": "cpp",
+        "*.tcc": "cpp",
+        "cstdio": "cpp"
     }
 }
