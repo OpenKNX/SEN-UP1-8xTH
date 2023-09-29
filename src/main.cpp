@@ -1,8 +1,8 @@
 #include "OpenKNX.h"
-#include "Logic.h"
-#include "THPSensorModule.h"
-#include "VirtualButtonModule.h"
-#include "UpdaterModule.h"
+//#include "Logic.h"
+//#include "THPSensorModule.h"
+//#include "VirtualButtonModule.h"
+//#include "UpdaterModule.h"
 
 void setup()
 {
@@ -20,10 +20,10 @@ void setup()
             THPCHANNEL_H_SCL,THPCHANNEL_H_SDA};
 
     
-    openknx.addModule(3, new VirtualButtonModule());
-    openknx.addModule(2, new THPSensorModule(THPSensorGpioPins));
-    openknx.addModule(1, new Logic());
-    openknx.addModule(9, new UpdaterModule());
+    //openknx.addModule(3, new VirtualButtonModule());
+    //openknx.addModule(2, new THPSensorModule(THPSensorGpioPins));
+    //openknx.addModule(1, new Logic());
+    //openknx.addModule(9, new UpdaterModule());
     openknx.setup();
 }
 
@@ -34,7 +34,7 @@ void loop()
 
 void loop1()
 {
-    openknx.loop1();
+    //openknx.loop1();
 }
 
 /*
