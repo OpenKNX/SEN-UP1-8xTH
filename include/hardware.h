@@ -7,15 +7,9 @@
 #define OKNXHW_UP1_CONTROLLER2040
 #include "OpenKNXHardware.h"
 
-// #define PROG_LED_PIN_ACTIVE_ON HIGH
-// #define PROG_LED_PIN 6
-// #define PROG_BUTTON_PIN 7
-// #define KNX_UART_TX_PIN 0
-// #define KNX_UART_RX_PIN 1
-// #define SAVE_INTERRUPT_PIN 5
+#define INFO_LED_PIN 13
+#define INFO_LED_PIN_ACTIVE_ON HIGH
 
-#define DBGLED1 13  
-#define DBGLED2 10
 
 #define THPCHANNEL_A_SCL 29
 #define THPCHANNEL_A_SDA 28
