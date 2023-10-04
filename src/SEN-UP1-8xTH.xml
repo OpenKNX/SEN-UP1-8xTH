@@ -26,7 +26,7 @@
               <op:verify File="../lib/OFM-THPSensorModule/src/ModuleVersion.h" ModuleVersion="1" />
             </op:define>
             <op:define prefix="BTN" header="SEN-UP1-8xTH.h" NumChannels="16" KoOffset="380" ModuleType="3">
-              <!-- <op:verify File="../lib/OFM-VirtualButton/src/ModuleVersion.h" ModuleVersion="3" /> -->
+              <op:verify File="../lib/OFM-VirtualButton/src/ModuleVersion.h" ModuleVersion="3" />
             </op:define>
             <ParameterTypes>
               <!-- generic parameter types from logicmodule -->

@@ -16,6 +16,7 @@
 #define MAIN_OrderNumber "SEN-UP1-8xTH"
 #define LOG_ModuleVersion 32
 #define THP_ModuleVersion 1
+#define BTN_ModuleVersion 3
 // Parameter with single occurrence
 
 
