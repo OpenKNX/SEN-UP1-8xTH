@@ -51,5 +51,4 @@ void loop1()
 
 - Add Sensor-Value Output in Console
 - Testfälle: Sensoren abziehen, anstecken, nicht vorhanden
-- change knx branch when fix is in main
 */
