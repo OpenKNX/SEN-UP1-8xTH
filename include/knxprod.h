@@ -10,7 +10,7 @@
                                              
 #define MAIN_OpenKnxId 0xA1
 #define MAIN_ApplicationNumber 3
-#define MAIN_ApplicationVersion 11
+#define MAIN_ApplicationVersion 12
 #define MAIN_ParameterSize 4162
 #define MAIN_MaxKoNumber 571
 #define MAIN_OrderNumber "SEN-UP1-8xTH"
