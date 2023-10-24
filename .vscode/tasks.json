@@ -97,7 +97,16 @@
             "type": "shell",
             "command": "scripts/Build-Release.ps1",
             "args": [
-            //    "Release"
+                "Release"
+            ],
+            "problemMatcher": [],
+            "group": "test"
+        },
+        {
+            "label": "Build-Release-Beta",
+            "type": "shell",
+            "command": "scripts/Build-Release.ps1",
+            "args": [
             ],
             "problemMatcher": [],
             "group": "test"

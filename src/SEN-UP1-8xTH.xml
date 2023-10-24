@@ -13,15 +13,21 @@
         <!-- If you just want to have a BUGFIX-Update of the ETS-Appliation (without firmware), increase ApplicationVersion AND ApplicationRevision simultaneously -->
         <!-- To sync ETS-Application and firmware again, increase ApplicationVersion AND set ApplicationRevision to 0 -->
         <!-- ApplicationNumber 0xA100: A1 = SirSydom -->
-        <op:version OpenKnxId="0xA1" ApplicationNumber="3" ApplicationVersion="10" ReplacesVersions="8 9" ApplicationRevision="0" />
+        <op:version OpenKnxId="0xA1" ApplicationNumber="3" ApplicationVersion="12" ReplacesVersions="8 9 10 11" ApplicationRevision="0" />
         <ApplicationProgram Id="%AID%" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="SEN-UP1-8xTH (Dev)" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de" DynamicTableManagement="false" Linkable="true" MinEtsVersion="5.7" ContextHelpFile="%FILE-HELP-de%" IconFile="%FILE-ICONS%" ApplicationNumber="0" ApplicationVersion="0" ReplacesVersions="0">
           <Static>
             <Code>
               <RelativeSegment Id="%AID%_RS-04-00000" Name="Parameters" Offset="0" Size="%MemorySize%" LoadStateMachine="4" />
             </Code>
-            <op:define prefix="LOG" header="SEN-UP1-8xTH.h" NumChannels="30" KoOffset="280" ModuleType="1" />
-            <op:define prefix="THP" header="SEN-UP1-8xTH.h" NumChannels="8" KoOffset="20" ModuleType="2"/>
-            <op:define prefix="BTN" header="SEN-UP1-8xTH.h" NumChannels="16" KoOffset="380" ModuleType="3"/>
+            <op:define prefix="LOG" header="SEN-UP1-8xTH.h" NumChannels="30" KoOffset="280" ModuleType="1" >
+              <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="32" />
+            </op:define>
+            <op:define prefix="THP" header="SEN-UP1-8xTH.h" NumChannels="8" KoOffset="20" ModuleType="2">
+              <op:verify File="../lib/OFM-THPSensorModule/library.json" ModuleVersion="1" />
+            </op:define>
+            <op:define prefix="BTN" header="SEN-UP1-8xTH.h" NumChannels="16" KoOffset="380" ModuleType="3">
+              <op:verify File="../lib/OFM-VirtualButton/library.json" ModuleVersion="3" />
+            </op:define>
             <ParameterTypes>
               <!-- generic parameter types from logicmodule -->
               <op:include href="../lib/OFM-LogicModule/src/Logikmodul.share.xml" xpath="//ParameterTypes/ParameterType" prefix="LOG" />

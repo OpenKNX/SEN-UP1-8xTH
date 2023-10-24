@@ -2,7 +2,7 @@
 #include "Logic.h"
 #include "THPSensorModule.h"
 #include "VirtualButtonModule.h"
-#include "UpdaterModule.h"
+#include "FileTransferModule.h"
 
 void setup()
 {
@@ -23,24 +23,32 @@ void setup()
     openknx.addModule(3, new VirtualButtonModule());
     openknx.addModule(2, new THPSensorModule(THPSensorGpioPins));
     openknx.addModule(1, new Logic());
-    openknx.addModule(9, new UpdaterModule());
+    openknx.addModule(9, new FileTransferModule());
     openknx.setup();
 }
+
+#ifdef OPENKNX_DUALCORE
+void setup1()
+{
+    openknx.setup1();
+}
+#endif
 
 void loop()
 {
     openknx.loop();
 }
 
+#ifdef OPENKNX_DUALCORE
 void loop1()
 {
     openknx.loop1();
 }
+#endif
 
 /*
 // ToDos:
 
 - Add Sensor-Value Output in Console
 - Testfälle: Sensoren abziehen, anstecken, nicht vorhanden
-- change knx branch when fix is in main
 */
