@@ -18,12 +18,13 @@ void setup()
             THPCHANNEL_F_SCL,THPCHANNEL_F_SDA,
             THPCHANNEL_G_SCL,THPCHANNEL_G_SDA,
             THPCHANNEL_H_SCL,THPCHANNEL_H_SDA};
+    THPSensorModule  thpsensormodule = THPSensorModule(THPSensorGpioPins);
 
     
-    openknx.addModule(3, new VirtualButtonModule());
-    openknx.addModule(2, new THPSensorModule(THPSensorGpioPins));
-    openknx.addModule(1, new Logic());
-    openknx.addModule(9, new FileTransferModule());
+    openknx.addModule(3, openknxVirtualButtonModule);
+    openknx.addModule(2, thpsensormodule);
+    openknx.addModule(1, openknxLogic);
+    openknx.addModule(9, openknxFileTransferModule);
     openknx.setup();
 }
 

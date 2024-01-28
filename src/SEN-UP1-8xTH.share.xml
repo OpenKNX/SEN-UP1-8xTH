@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-model href="../../Organization/knxprod-support/knx_project_20/knx-editor.xsd" type="application/xml" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<KNX xmlns="http://knx.org/xml/project/20" xmlns:op="http://github.com/OpenKNX/OpenKNXproducer">
+  <ManufacturerData>
+    <Manufacturer RefId="M-00FA">
+      <ApplicationPrograms>
+        <ApplicationProgram Id="%AID%" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de" DynamicTableManagement="false" Linkable="true" MinEtsVersion="5.7" ApplicationNumber="0" ApplicationVersion="0" ReplacesVersions="0">
+          <Static>
+            <ParameterTypes>
+              <ParameterType Id="%AID%_PT-BTNInputs" Name="BTNInputs">
+                <TypeRestriction Base="Value" SizeInBit="16">
+                  <Enumeration Text="Externes KO" Value="0" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang A1 (SCL)" Value="50" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang A2 (SDA)" Value="51" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang B1 (SCL)" Value="82" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang B2 (SDA)" Value="83" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang C1 (SCL)" Value="114" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang C2 (SDA)" Value="115" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang D1 (SCL)" Value="146" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang D2 (SDA)" Value="147" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang E1 (SCL)" Value="178" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang E2 (SDA)" Value="179" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang F1 (SCL)" Value="210" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang F2 (SDA)" Value="211" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang G1 (SCL)" Value="242" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang G2 (SDA)" Value="243" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang H1 (SCL)" Value="274" Id="%ENID%" />
+                  <Enumeration Text="Sensoreingang H2 (SDA)" Value="275" Id="%ENID%" />
+                </TypeRestriction>
+              </ParameterType>
+            </ParameterTypes>
+            <Parameters>
+            </Parameters>
+            <ParameterRefs>
+            </ParameterRefs>
+            <ComObjectTable>
+            </ComObjectTable>
+            <ComObjectRefs>
+            </ComObjectRefs>
+        </Static>
+        </ApplicationProgram>
+      </ApplicationPrograms>
+    </Manufacturer>
+  </ManufacturerData>
+</KNX>
