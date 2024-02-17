@@ -6,7 +6,7 @@
 
 void setup()
 {
-    const uint8_t firmwareRevision = 1;
+    const uint8_t firmwareRevision = 0;
     openknx.init(firmwareRevision);
 
     const uint8_t THPSensorGpioPins[THP_ChannelCount*2] = {

@@ -42,7 +42,7 @@
             "dependsOn": ["Gen. Dependencies.txt"]
         },
         {
-            "label": "OpenKNXproducer",
+            "label": "OpenKNXproducer Dev",
             "type": "shell",
             "command": "${env:USERPROFILE}/bin/OpenKNXproducer.exe",
             "args": [
@@ -51,6 +51,22 @@
                 "-h",
                 "include/knxprod.h",
                 "src/SEN-UP1-8xTH.xml"
+            ],
+            "problemMatcher": [],
+            "group": "test",
+            "dependsOrder": "sequence",
+            "dependsOn": ["Gen. Dependencies.txt"]
+        },
+        {
+            "label": "OpenKNXproducer Release",
+            "type": "shell",
+            "command": "${env:USERPROFILE}/bin/OpenKNXproducer.exe",
+            "args": [
+                "create",
+                "--Debug",
+                "-h",
+                "include/knxprod.h",
+                "src/SEN-UP1-8xTH-Release.xml"
             ],
             "problemMatcher": [],
             "group": "test",
