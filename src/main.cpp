@@ -4,23 +4,22 @@
 #include "VirtualButtonModule.h"
 #include "FileTransferModule.h"
 
+const uint8_t THPSensorGpioPins[THP_ChannelCount*2] = {
+        THPCHANNEL_A_SCL,THPCHANNEL_A_SDA,
+        THPCHANNEL_B_SCL,THPCHANNEL_B_SDA,
+        THPCHANNEL_C_SCL,THPCHANNEL_C_SDA,
+        THPCHANNEL_D_SCL,THPCHANNEL_D_SDA,
+        THPCHANNEL_E_SCL,THPCHANNEL_E_SDA,
+        THPCHANNEL_F_SCL,THPCHANNEL_F_SDA,
+        THPCHANNEL_G_SCL,THPCHANNEL_G_SDA,
+        THPCHANNEL_H_SCL,THPCHANNEL_H_SDA};
+THPSensorModule  thpsensormodule = THPSensorModule(THPSensorGpioPins);
+
 void setup()
 {
     const uint8_t firmwareRevision = 0;
     openknx.init(firmwareRevision);
 
-    const uint8_t THPSensorGpioPins[THP_ChannelCount*2] = {
-            THPCHANNEL_A_SCL,THPCHANNEL_A_SDA,
-            THPCHANNEL_B_SCL,THPCHANNEL_B_SDA,
-            THPCHANNEL_C_SCL,THPCHANNEL_C_SDA,
-            THPCHANNEL_D_SCL,THPCHANNEL_D_SDA,
-            THPCHANNEL_E_SCL,THPCHANNEL_E_SDA,
-            THPCHANNEL_F_SCL,THPCHANNEL_F_SDA,
-            THPCHANNEL_G_SCL,THPCHANNEL_G_SDA,
-            THPCHANNEL_H_SCL,THPCHANNEL_H_SDA};
-    THPSensorModule  thpsensormodule = THPSensorModule(THPSensorGpioPins);
-
-    
     openknx.addModule(3, openknxVirtualButtonModule);
     openknx.addModule(2, thpsensormodule);
     openknx.addModule(1, openknxLogic);
