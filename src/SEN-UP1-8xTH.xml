@@ -4,14 +4,14 @@
   <op:ETS
     OpenKnxId="0xA1"
     ApplicationNumber="3"
-    ApplicationVersion="1.0"
-    ReplacesVersions="0.12 0.14 0.15"
+    ApplicationVersion="1.2"
+    ReplacesVersions="0.12 0.14 0.15 1.0 1.1"
     ApplicationRevision="0"
     ProductName="SEN-UP1-8xTH"
     BusCurrent="20"
     BuildSuffix="-Beta"
     BuildSuffixText=" (Beta)"
-    OrderNumber="SEN-UP1-8xTH"
+    OrderNumber="OpenKnxSEN-UP1-8xTH"
     SerialNumber="A10101" />
 
   <op:define prefix="SENUP18XTH" ModuleType="99"
@@ -19,7 +19,14 @@
 
   <op:define prefix="BASE" ModuleType="10"
     share="../lib/OGM-Common/src/Common.share.xml">
-    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="1.1" />
+    <op:verify File="../lib/OGM-Common/library.json" ModuleVersion="1.2" />
+  </op:define>
+
+  <op:define prefix="UCT" ModuleType="99"
+    share="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml"
+    noConfigTransfer="true"
+    >
+    <op:verify File="../lib/OFM-ConfigTransfer/library.json" ModuleVersion="0.2" />
   </op:define>
   
   <op:define prefix="THP" ModuleType="20"
@@ -33,14 +40,14 @@
     share="../lib/OFM-VirtualButton/src/VirtualButton.share.xml"
     template="../lib/OFM-VirtualButton/src/VirtualButton.templ.xml"
     NumChannels="16" KoOffset="380">
-    <op:verify File="../lib/OFM-VirtualButton/library.json" ModuleVersion="0.3" /> 
+    <op:verify File="../lib/OFM-VirtualButton/library.json" ModuleVersion="0.5" /> 
   </op:define>
 
   <op:define prefix="LOG" ModuleType="10"
     share="../lib/OFM-LogicModule/src/Logikmodul.share.xml"
     template="../lib/OFM-LogicModule/src/Logikmodul.templ.xml"
     NumChannels="30" KoOffset="280">
-    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="3.1" /> 
+    <op:verify File="../lib/OFM-LogicModule/library.json" ModuleVersion="3.5" /> 
   </op:define>
 
   <generate />
