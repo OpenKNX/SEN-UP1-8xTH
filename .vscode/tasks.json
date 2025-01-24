@@ -97,7 +97,7 @@
         {
             "label": "Pull & Restore",
             "type": "shell",
-            "command": "${workspaceFolder}/restore/Restore-Checkout-Branch.ps1",
+            "command": "${workspaceFolder}/restore/Restore-Dependencies-Branch.ps1",
             "args": [
             ],
             "options": {
