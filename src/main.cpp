@@ -15,6 +15,7 @@ const uint8_t THPSensorGpioPins[THP_ChannelCount*2] = {
         OKNXHW_SENSOR_H1_SCL_PIN,OKNXHW_SENSOR_H2_SDA_PIN};
 THPSensorModule  thpsensormodule = THPSensorModule(THPSensorGpioPins);
 
+bool setup_done = false;
 void setup()
 {
     const uint8_t firmwareRevision = 0;
@@ -25,30 +26,20 @@ void setup()
     openknx.addModule(1, openknxLogic);
     openknx.addModule(9, openknxFileTransferModule);
     openknx.setup();
+    setup_done = true;
 }
-
-#ifdef OPENKNX_DUALCORE
-void setup1()
-{
-    openknx.setup1();
-}
-#endif
 
 void loop()
 {
     openknx.loop();
 }
 
-#ifdef OPENKNX_DUALCORE
 void loop1()
 {
-    openknx.loop1();
+    while(!setup_done)
+        delay(100);
+    while(true)
+    {
+        thpsensormodule.loop1();
+    }
 }
-#endif
-
-/*
-// ToDos:
-
-- Add Sensor-Value Output in Console
-- Testfälle: Sensoren abziehen, anstecken, nicht vorhanden
-*/

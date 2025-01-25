@@ -10,13 +10,13 @@
                                              
 #define MAIN_OpenKnxId 0xA1
 #define MAIN_ApplicationNumber 3
-#define MAIN_ApplicationVersion 18
+#define MAIN_ApplicationVersion 20
 #define MAIN_ParameterSize 7198
 #define MAIN_MaxKoNumber 571
 #define MAIN_OrderNumber "OpenKnxSEN-UP1-8xTH"
 #define BASE_ModuleVersion 18
 #define UCT_ModuleVersion 2
-#define THP_ModuleVersion 2
+#define THP_ModuleVersion 3
 #define BTN_ModuleVersion 5
 #define LOG_ModuleVersion 53
 // Parameter with single occurrence
@@ -227,12 +227,12 @@
 #define     THP_SensorDewPointMinMax_Mask 0x20
 #define     THP_SensorDewPointMinMax_Shift 5
 #define THP_Input0DebounceTime_                 56      // 8 Bits, Bit 7-0
-#define THP_Input0ActionOpen_                   57      // 1 Bit, Bit 7
-#define     THP_Input0ActionOpen_Mask 0x80
-#define     THP_Input0ActionOpen_Shift 7
-#define THP_Input0ActionClosed_                 57      // 1 Bit, Bit 6
-#define     THP_Input0ActionClosed_Mask 0x40
-#define     THP_Input0ActionClosed_Shift 6
+#define THP_Input0ActionOpen_                   57      // 2 Bits, Bit 7-6
+#define     THP_Input0ActionOpen_Mask 0xC0
+#define     THP_Input0ActionOpen_Shift 6
+#define THP_Input0ActionClosed_                 57      // 2 Bits, Bit 5-4
+#define     THP_Input0ActionClosed_Mask 0x30
+#define     THP_Input0ActionClosed_Shift 4
 #define THP_Input0SendCycle_                    58      // 8 Bits, Bit 7-0
 #define THP_SensorPressureSendChange_           74      // 1 Bit, Bit 7
 #define     THP_SensorPressureSendChange_Mask 0x80
@@ -249,12 +249,12 @@
 #define     THP_SensorPressureMinMax_Mask 0x20
 #define     THP_SensorPressureMinMax_Shift 5
 #define THP_Input1DebounceTime_                 74      // 8 Bits, Bit 7-0
-#define THP_Input1ActionOpen_                   75      // 1 Bit, Bit 7
-#define     THP_Input1ActionOpen_Mask 0x80
-#define     THP_Input1ActionOpen_Shift 7
-#define THP_Input1ActionClosed_                 75      // 1 Bit, Bit 6
-#define     THP_Input1ActionClosed_Mask 0x40
-#define     THP_Input1ActionClosed_Shift 6
+#define THP_Input1ActionOpen_                   75      // 2 Bits, Bit 7-6
+#define     THP_Input1ActionOpen_Mask 0xC0
+#define     THP_Input1ActionOpen_Shift 6
+#define THP_Input1ActionClosed_                 75      // 2 Bits, Bit 5-4
+#define     THP_Input1ActionClosed_Mask 0x30
+#define     THP_Input1ActionClosed_Shift 4
 #define THP_Input1SendCycle_                    76      // 8 Bits, Bit 7-0
 
 // Sensor %Z%
@@ -344,9 +344,9 @@
 // Entprellung
 #define ParamTHP_Input0DebounceTime_                 (knx.paramByte(THP_ParamCalcIndex(THP_Input0DebounceTime_)))
 // Geöffnet
-#define ParamTHP_Input0ActionOpen_                   ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_Input0ActionOpen_)) & THP_Input0ActionOpen_Mask))
+#define ParamTHP_Input0ActionOpen_                   ((knx.paramByte(THP_ParamCalcIndex(THP_Input0ActionOpen_)) & THP_Input0ActionOpen_Mask) >> THP_Input0ActionOpen_Shift)
 // Geschlossen
-#define ParamTHP_Input0ActionClosed_                 ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_Input0ActionClosed_)) & THP_Input0ActionClosed_Mask))
+#define ParamTHP_Input0ActionClosed_                 ((knx.paramByte(THP_ParamCalcIndex(THP_Input0ActionClosed_)) & THP_Input0ActionClosed_Mask) >> THP_Input0ActionClosed_Shift)
 // Zyklisch senden alle
 #define ParamTHP_Input0SendCycle_                    (knx.paramByte(THP_ParamCalcIndex(THP_Input0SendCycle_)))
 // Senden bei Änderung
@@ -368,9 +368,9 @@
 // Entprellung
 #define ParamTHP_Input1DebounceTime_                 (knx.paramByte(THP_ParamCalcIndex(THP_Input1DebounceTime_)))
 // Geöffnet
-#define ParamTHP_Input1ActionOpen_                   ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_Input1ActionOpen_)) & THP_Input1ActionOpen_Mask))
+#define ParamTHP_Input1ActionOpen_                   ((knx.paramByte(THP_ParamCalcIndex(THP_Input1ActionOpen_)) & THP_Input1ActionOpen_Mask) >> THP_Input1ActionOpen_Shift)
 // Geschlossen
-#define ParamTHP_Input1ActionClosed_                 ((bool)(knx.paramByte(THP_ParamCalcIndex(THP_Input1ActionClosed_)) & THP_Input1ActionClosed_Mask))
+#define ParamTHP_Input1ActionClosed_                 ((knx.paramByte(THP_ParamCalcIndex(THP_Input1ActionClosed_)) & THP_Input1ActionClosed_Mask) >> THP_Input1ActionClosed_Shift)
 // Zyklisch senden alle
 #define ParamTHP_Input1SendCycle_                    (knx.paramByte(THP_ParamCalcIndex(THP_Input1SendCycle_)))
 
