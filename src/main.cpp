@@ -18,7 +18,7 @@ THPSensorModule  thpsensormodule = THPSensorModule(THPSensorGpioPins);
 bool setup_done = false;
 void setup()
 {
-    const uint8_t firmwareRevision = 0;
+    const uint8_t firmwareRevision = 1;
     openknx.init(firmwareRevision);
 
     openknx.addModule(3, openknxVirtualButtonModule);
