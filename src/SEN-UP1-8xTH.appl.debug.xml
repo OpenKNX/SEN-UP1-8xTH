@@ -9,7 +9,7 @@
         </CatalogSection>
       </Catalog>
       <ApplicationPrograms>
-        <op:version OpenKnxId="0xA1" ApplicationNumber="3" ApplicationVersion="20" ReplacesVersions="12 14 15 16 17 18 19" ApplicationRevision="0" />
+        <op:version OpenKnxId="0xA1" ApplicationNumber="3" ApplicationVersion="20" ReplacesVersions="12 14 15 16 17 18 19" ApplicationRevision="0" FirmwareRevision="-1" />
         <ApplicationProgram Id="%AID%" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="SEN-UP1-8xTH-Beta" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de-DE" DynamicTableManagement="false" Linkable="true" MinEtsVersion="5.0" ContextHelpFile="%FILE-HELP-de%" IconFile="%FILE-ICONS%" IPConfig="Custom" ApplicationNumber="0" ApplicationVersion="0" ReplacesVersions="0">
           <Static>
             <Code>
@@ -20,8 +20,11 @@
               <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="BASE" />
               <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="UCT" />
               <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="THP" />
+              <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.templ.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" type="template" prefix="THP" />
               <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="BTN" />
+              <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.templ.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" type="template" prefix="BTN" />
               <op:include href="../lib/OFM-LogicModule/src/Logikmodul.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="LOG" />
+              <op:include href="../lib/OFM-LogicModule/src/Logikmodul.templ.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" type="template" prefix="LOG" />
             </ParameterTypes>
             <Parameters>
               <op:include href="SEN-UP1-8xTH.share.xml" xpath="//ApplicationProgram/Static/Parameters/Parameter|//ApplicationProgram/Static/Parameters/Union" type="parameter" prefix="SENUP18XTH" />
@@ -105,9 +108,6 @@
                 <LdCtrlWriteRelMem ObjIdx="4" Offset="0" Size="%MemorySize%" Verify="true" AppliesTo="full,par" />
               </LoadProcedure>
               <LoadProcedure MergeId="7">
-                <LdCtrlLoadImageProp ObjIdx="1" PropId="27" />
-                <LdCtrlLoadImageProp ObjIdx="2" PropId="27" />
-                <LdCtrlLoadImageProp ObjIdx="3" PropId="27" />
                 <LdCtrlLoadImageProp ObjIdx="4" PropId="27" />
               </LoadProcedure>
             </LoadProcedures>
@@ -129,7 +129,7 @@
               <op:include href="../lib/OFM-VirtualButton/src/VirtualButton.share.xml" xpath="//ApplicationProgram/Static/Script/text()" prefix="BTN" />
               <op:include href="../lib/OFM-LogicModule/src/Logikmodul.share.xml" xpath="//ApplicationProgram/Static/Script/text()" prefix="LOG" />
             </Script>
-            <Options />
+            <Options TextParameterEncoding="iso-8859-15" />
           </Static>
           <ModuleDefs>
             <op:include href="SEN-UP1-8xTH.share.xml" xpath="//ApplicationProgram/ModuleDefs/*" prefix="SENUP18XTH" />
