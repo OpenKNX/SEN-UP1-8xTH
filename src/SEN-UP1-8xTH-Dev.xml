@@ -4,13 +4,13 @@
   <op:ETS
     OpenKnxId="0xA1"
     ApplicationNumber="3"
-    ApplicationVersion="1.4"
-    ReplacesVersions="0.12 0.14 0.15 1.0 1.1 1.2 1.3"
+    ApplicationVersion="1.5"
+    ReplacesVersions="1.4 0.12 0.14 0.15 1.0 1.1 1.2 1.3"
     ApplicationRevision="0"
     ProductName="SEN-UP1-8xTH"
     BusCurrent="20"
-    BuildSuffix="-Beta"
-    BuildSuffixText=" (Beta)"
+    BuildSuffix="-Dev"
+    BuildSuffixText=" (Dev)"
     OrderNumber="OpenKnxSEN-UP1-8xTH"
     SerialNumber="A10101" />
 

@@ -15,10 +15,10 @@
 #define ETS_ModuleId_THP 4
 #define ETS_ModuleId_BTN 5
 #define ETS_ModuleId_LOG 6
-#define MAIN_FirmwareName "SEN-UP1-8xTH (Beta)"
+#define MAIN_FirmwareName "SEN-UP1-8xTH (Dev)"
 #define MAIN_OpenKnxId 0xA1
 #define MAIN_ApplicationNumber 3
-#define MAIN_ApplicationVersion 20
+#define MAIN_ApplicationVersion 21
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 7266
 #define MAIN_MaxKoNumber 571
