@@ -15,10 +15,10 @@
 #define ETS_ModuleId_THP 4
 #define ETS_ModuleId_BTN 5
 #define ETS_ModuleId_LOG 6
-#define MAIN_FirmwareName "UP1-8xSensor"
+#define MAIN_FirmwareName "UP1 8xSensor (Dev)"
 #define MAIN_OpenKnxId 0xA1
-#define MAIN_ApplicationNumber 2
-#define MAIN_ApplicationVersion 3
+#define MAIN_ApplicationNumber 3
+#define MAIN_ApplicationVersion 23
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 7266
 #define MAIN_MaxKoNumber 571

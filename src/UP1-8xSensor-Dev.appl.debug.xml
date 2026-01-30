@@ -5,12 +5,12 @@
     <Manufacturer RefId="M-00FA">
       <Catalog>
         <CatalogSection Id="M-00FA_CS-OpenKNX" Name="OpenKNX" Number="OpenKNX" DefaultLanguage="de-DE">
-          <CatalogItem Id="%CatalogItemId%" Name="OpenKNX: UP1-8xSensor (Dev)" Number="1" ProductRefId="%ProductId%" Hardware2ProgramRefId="%Hardware2ProgramId%" DefaultLanguage="de-DE" />
+          <CatalogItem Id="%CatalogItemId%" Name="OpenKNX: UP1 8xSensor (Dev)" Number="1" ProductRefId="%ProductId%" Hardware2ProgramRefId="%Hardware2ProgramId%" DefaultLanguage="de-DE" />
         </CatalogSection>
       </Catalog>
       <ApplicationPrograms>
-        <op:version OpenKnxId="0xA1" ApplicationNumber="3" ApplicationVersion="22" ReplacesVersions="21 20 12 14 15 16 17 18 19" ApplicationRevision="0" FirmwareRevision="-1" />
-        <ApplicationProgram Id="%AID%" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="UP1-8xSensor-Dev" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de-DE" DynamicTableManagement="false" Linkable="true" MinEtsVersion="5.0" ContextHelpFile="%FILE-HELP-de%" IconFile="%FILE-ICONS%" IPConfig="Custom" ApplicationNumber="0" ApplicationVersion="0" ReplacesVersions="0">
+        <op:version OpenKnxId="0xA1" ApplicationNumber="3" ApplicationVersion="23" ReplacesVersions="22 21 20 12 14 15 16 17 18 19" ApplicationRevision="0" FirmwareRevision="-1" />
+        <ApplicationProgram Id="%AID%" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="UP1 8xSensor-Dev" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de-DE" DynamicTableManagement="false" Linkable="true" MinEtsVersion="5.0" ContextHelpFile="%FILE-HELP-de%" IconFile="%FILE-ICONS%" IPConfig="Custom" ApplicationNumber="0" ApplicationVersion="0" ReplacesVersions="0">
           <Static>
             <Code>
               <RelativeSegment Id="%AID%_RS-04-00000" Name="Parameters" Offset="0" Size="%MemorySize%" LoadStateMachine="4" />
@@ -161,9 +161,9 @@
         <op:include href="../lib/OFM-LogicModule/src/Logikmodul.share.xml" xpath="//Manufacturer/Baggages/*" prefix="LOG" />
       </Baggages>
       <Hardware>
-        <Hardware Id="%HardwareId%" Name="OpenKNX-UP1-8xSensor-Dev" SerialNumber="A10101" VersionNumber="1" BusCurrent="20" HasIndividualAddress="true" HasApplicationProgram="true">
+        <Hardware Id="%HardwareId%" Name="OpenKNX-UP1 8xSensor-Dev" SerialNumber="A10101" VersionNumber="1" BusCurrent="20" HasIndividualAddress="true" HasApplicationProgram="true">
           <Products>
-            <Product Id="%ProductId%" Text="OpenKNX: UP1-8xSensor (Dev)" OrderNumber="UP1-8xSensor" IsRailMounted="false" DefaultLanguage="de-DE">
+            <Product Id="%ProductId%" Text="OpenKNX: UP1 8xSensor (Dev)" OrderNumber="UP1-8xSensor" IsRailMounted="false" DefaultLanguage="de-DE">
               <RegistrationInfo RegistrationStatus="Registered" />
             </Product>
           </Products>

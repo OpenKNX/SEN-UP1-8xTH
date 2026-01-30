@@ -7,12 +7,14 @@
     ApplicationVersion="0.3"
     ReplacesVersions="0.2 0.1"
     ApplicationRevision="0"
-    ProductName="UP1-8xSensor"
+    ProductName="UP1 8xSensor"
     BusCurrent="20"
     BuildSuffix=""
     BuildSuffixText=""
     OrderNumber="UP1-8xSensor"
     SerialNumber="A10101" />
+
+  <op:config name="%BASE_ShowInfoLedPanel%" value="0"></op:config>
 
   <op:define prefix="SENUP18XTH" ModuleType="99"
     share="UP1-8xSensor.share.xml" />
