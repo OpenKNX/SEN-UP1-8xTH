@@ -35,7 +35,7 @@ if (!$?) { exit 1 }
 # see comment in Build-Step.ps1 for argument description
 
 # Example call, the following 2 lines might be there multiple times for each firmware which should be built
- ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_UP1 firmware uf2
+ ../OGM-Common/scripts/setup/reusable/Build-Step.ps1 release_UP1 firmware_UP1-SEN-8x rp2040-tp
  if (!$?) { exit 1 }
 
 

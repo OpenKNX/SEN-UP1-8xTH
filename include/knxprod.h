@@ -15,15 +15,15 @@
 #define ETS_ModuleId_THP 4
 #define ETS_ModuleId_BTN 5
 #define ETS_ModuleId_LOG 6
-#define MAIN_FirmwareName "SEN-UP1-8xTH (Dev)"
+#define MAIN_FirmwareName "UP1-8xSensor"
 #define MAIN_OpenKnxId 0xA1
-#define MAIN_ApplicationNumber 3
-#define MAIN_ApplicationVersion 21
+#define MAIN_ApplicationNumber 2
+#define MAIN_ApplicationVersion 3
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 7266
 #define MAIN_MaxKoNumber 571
-#define MAIN_OrderNumber "OpenKnxSEN-UP1-8xTH"
-#define BASE_ModuleVersion 21
+#define MAIN_OrderNumber "UP1-8xSensor"
+#define BASE_ModuleVersion 22
 #define UCT_ModuleVersion 4
 #define THP_ModuleVersion 3
 #define BTN_ModuleVersion 5
@@ -83,6 +83,12 @@
 #define     BASE_ManualSaveMask 0x07
 #define     BASE_ManualSaveShift 0
 #define BASE_PeriodicSave                        79      // 8 Bits, Bit 7-0
+#define BASE_Info1LedFunc                        80      // 16 Bits, Bit 15-0
+#define BASE_Info2LedFunc                        82      // 16 Bits, Bit 15-0
+#define BASE_Info3LedFunc                        84      // 16 Bits, Bit 15-0
+#define BASE_DefaultLedFunc                      85      // 1 Bit, Bit 7
+#define     BASE_DefaultLedFuncMask 0x80
+#define     BASE_DefaultLedFuncShift 7
 #define BASE_Dummy                               109      // uint8_t
 #define BASE_ModuleEnabled_SENUP18XTH            110      // 1 Bit, Bit 7
 #define     BASE_ModuleEnabled_SENUP18XTHMask 0x80
@@ -144,6 +150,14 @@
 #define ParamBASE_ManualSave                          (knx.paramByte(BASE_ManualSave) & BASE_ManualSaveMask)
 // Zyklisches speichern
 #define ParamBASE_PeriodicSave                        (knx.paramByte(BASE_PeriodicSave))
+// Info1
+#define ParamBASE_Info1LedFunc                        (knx.paramWord(BASE_Info1LedFunc))
+// Info2
+#define ParamBASE_Info2LedFunc                        (knx.paramWord(BASE_Info2LedFunc))
+// Info3
+#define ParamBASE_Info3LedFunc                        (knx.paramWord(BASE_Info3LedFunc))
+// 
+#define ParamBASE_DefaultLedFunc                      ((bool)(knx.paramByte(BASE_DefaultLedFunc) & BASE_DefaultLedFuncMask))
 // 
 #define ParamBASE_Dummy                               (knx.paramByte(BASE_Dummy))
 // SENUP18XTH

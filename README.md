@@ -1,4 +1,2 @@
-# SEN-UP1-8xTH
+# UP1-8xSensor
 OpenKNX 8channel Temperature/Humidity Sensor
-
-see https://github.com/OpenKNX/OpenKNX/wiki/SEN-UP1-8xTH
