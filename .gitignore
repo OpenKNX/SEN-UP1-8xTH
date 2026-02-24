@@ -8,3 +8,4 @@ release/*
 /include/versions.h
 /.vscode/settings.json
 
+/src/UP1-8xSensor-Dev.baggages

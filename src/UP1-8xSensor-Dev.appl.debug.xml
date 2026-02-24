@@ -9,14 +9,14 @@
         </CatalogSection>
       </Catalog>
       <ApplicationPrograms>
-        <op:version OpenKnxId="0xA1" ApplicationNumber="3" ApplicationVersion="23" ReplacesVersions="22 21 20 12 14 15 16 17 18 19" ApplicationRevision="0" FirmwareRevision="-1" />
+        <op:version OpenKnxId="0xA1" ApplicationNumber="3" ApplicationVersion="24" ReplacesVersions="23 22 21 20 12 14 15 16 17 18 19" ApplicationRevision="0" FirmwareRevision="-1" />
         <ApplicationProgram Id="%AID%" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="UP1 8xSensor-Dev" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de-DE" DynamicTableManagement="false" Linkable="true" MinEtsVersion="5.0" ContextHelpFile="%FILE-HELP-de%" IconFile="%FILE-ICONS%" IPConfig="Custom" ApplicationNumber="0" ApplicationVersion="0" ReplacesVersions="0">
           <Static>
             <Code>
               <RelativeSegment Id="%AID%_RS-04-00000" Name="Parameters" Offset="0" Size="%MemorySize%" LoadStateMachine="4" />
             </Code>
             <ParameterTypes>
-              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="SENUP18XTH" />
+              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="UP1SEN" />
               <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="BASE" />
               <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="UCT" />
               <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" prefix="THP" />
@@ -27,7 +27,7 @@
               <op:include href="../lib/OFM-LogicModule/src/Logikmodul.templ.xml" xpath="//ApplicationProgram/Static/ParameterTypes/ParameterType" type="template" prefix="LOG" />
             </ParameterTypes>
             <Parameters>
-              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/Parameters/Parameter|//ApplicationProgram/Static/Parameters/Union" type="parameter" prefix="SENUP18XTH" />
+              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/Parameters/Parameter|//ApplicationProgram/Static/Parameters/Union" type="parameter" prefix="UP1SEN" />
               <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/Parameters/Parameter|//ApplicationProgram/Static/Parameters/Union" type="parameter" prefix="BASE" />
               <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/Parameters/Parameter|//ApplicationProgram/Static/Parameters/Union" type="parameter" prefix="UCT" />
               <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ApplicationProgram/Static/Parameters/Parameter|//ApplicationProgram/Static/Parameters/Union" type="parameter" prefix="THP" />
@@ -38,7 +38,7 @@
               <op:include href="../lib/OFM-LogicModule/src/Logikmodul.templ.xml" xpath="//ApplicationProgram/Static/Parameters/Parameter|//ApplicationProgram/Static/Parameters/Union" type="template" prefix="LOG" />
             </Parameters>
             <ParameterRefs>
-              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterRefs/ParameterRef" prefix="SENUP18XTH" />
+              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterRefs/ParameterRef" prefix="UP1SEN" />
               <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ParameterRefs/ParameterRef" prefix="BASE" />
               <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ParameterRefs/ParameterRef" prefix="UCT" />
               <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterRefs/ParameterRef" prefix="THP" />
@@ -49,7 +49,7 @@
               <op:include href="../lib/OFM-LogicModule/src/Logikmodul.templ.xml" xpath="//ApplicationProgram/Static/ParameterRefs/ParameterRef" type="template" prefix="LOG" />
             </ParameterRefs>
             <ParameterCalculations>
-              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterCalculations/ParameterCalculation" prefix="SENUP18XTH" />
+              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterCalculations/ParameterCalculation" prefix="UP1SEN" />
               <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ParameterCalculations/ParameterCalculation" prefix="BASE" />
               <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ParameterCalculations/ParameterCalculation" prefix="UCT" />
               <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterCalculations/ParameterCalculation" prefix="THP" />
@@ -60,7 +60,7 @@
               <op:include href="../lib/OFM-LogicModule/src/Logikmodul.templ.xml" xpath="//ApplicationProgram/Static/ParameterCalculations/ParameterCalculation" type="template" prefix="LOG" />
             </ParameterCalculations>
             <ParameterValidations>
-              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterValidations/ParameterValidation" prefix="SENUP18XTH" />
+              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterValidations/ParameterValidation" prefix="UP1SEN" />
               <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ParameterValidations/ParameterValidation" prefix="BASE" />
               <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ParameterValidations/ParameterValidation" prefix="UCT" />
               <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ApplicationProgram/Static/ParameterValidations/ParameterValidation" prefix="THP" />
@@ -71,7 +71,7 @@
               <op:include href="../lib/OFM-LogicModule/src/Logikmodul.templ.xml" xpath="//ApplicationProgram/Static/ParameterValidations/ParameterValidation" type="template" prefix="LOG" />
             </ParameterValidations>
             <ComObjectTable>
-              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/ComObjectTable/ComObject" prefix="SENUP18XTH" />
+              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/ComObjectTable/ComObject" prefix="UP1SEN" />
               <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ComObjectTable/ComObject" prefix="BASE" />
               <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ComObjectTable/ComObject" prefix="UCT" />
               <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ApplicationProgram/Static/ComObjectTable/ComObject" prefix="THP" />
@@ -82,7 +82,7 @@
               <op:include href="../lib/OFM-LogicModule/src/Logikmodul.templ.xml" xpath="//ApplicationProgram/Static/ComObjectTable/ComObject" type="template" prefix="LOG" />
             </ComObjectTable>
             <ComObjectRefs>
-              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/ComObjectRefs/ComObjectRef" prefix="SENUP18XTH" />
+              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/ComObjectRefs/ComObjectRef" prefix="UP1SEN" />
               <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/ComObjectRefs/ComObjectRef" prefix="BASE" />
               <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/ComObjectRefs/ComObjectRef" prefix="UCT" />
               <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ApplicationProgram/Static/ComObjectRefs/ComObjectRef" prefix="THP" />
@@ -114,7 +114,7 @@
             <Extension />
             <Messages>
               <Message Id="%AID%_M-1" Name="VersionMismatch" Text="Diese Applikation und die installierte Firmware passen nicht zusammen." />
-              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/Messages/*" prefix="SENUP18XTH" />
+              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/Messages/*" prefix="UP1SEN" />
               <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/Messages/*" prefix="BASE" />
               <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/Messages/*" prefix="UCT" />
               <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ApplicationProgram/Static/Messages/*" prefix="THP" />
@@ -122,7 +122,7 @@
               <op:include href="../lib/OFM-LogicModule/src/Logikmodul.share.xml" xpath="//ApplicationProgram/Static/Messages/*" prefix="LOG" />
             </Messages>
             <Script>
-              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/Script/text()" prefix="SENUP18XTH" />
+              <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Static/Script/text()" prefix="UP1SEN" />
               <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Static/Script/text()" prefix="BASE" />
               <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Static/Script/text()" prefix="UCT" />
               <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ApplicationProgram/Static/Script/text()" prefix="THP" />
@@ -132,7 +132,7 @@
             <Options TextParameterEncoding="iso-8859-15" />
           </Static>
           <ModuleDefs>
-            <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/ModuleDefs/*" prefix="SENUP18XTH" />
+            <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/ModuleDefs/*" prefix="UP1SEN" />
             <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/ModuleDefs/*" prefix="BASE" />
             <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/ModuleDefs/*" prefix="UCT" />
             <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ApplicationProgram/ModuleDefs/*" prefix="THP" />
@@ -143,7 +143,7 @@
             <op:include href="../lib/OFM-LogicModule/src/Logikmodul.templ.xml" xpath="//ApplicationProgram/ModuleDefs/*" type="template" prefix="LOG" />
           </ModuleDefs>
           <Dynamic>
-            <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Dynamic/*" prefix="SENUP18XTH" />
+            <op:include href="UP1-8xSensor.share.xml" xpath="//ApplicationProgram/Dynamic/*" prefix="UP1SEN" />
             <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//ApplicationProgram/Dynamic/*" prefix="BASE" />
             <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//ApplicationProgram/Dynamic/*" prefix="UCT" />
             <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//ApplicationProgram/Dynamic/*" prefix="THP" />
@@ -153,7 +153,7 @@
         </ApplicationProgram>
       </ApplicationPrograms>
       <Baggages>
-        <op:include href="UP1-8xSensor.share.xml" xpath="//Manufacturer/Baggages/*" prefix="SENUP18XTH" />
+        <op:include href="UP1-8xSensor.share.xml" xpath="//Manufacturer/Baggages/*" prefix="UP1SEN" />
         <op:include href="../lib/OGM-Common/src/Common.share.xml" xpath="//Manufacturer/Baggages/*" prefix="BASE" />
         <op:include href="../lib/OFM-ConfigTransfer/src/ConfigTransfer.share.xml" xpath="//Manufacturer/Baggages/*" prefix="UCT" />
         <op:include href="../lib/OFM-THPSensorModule/src/THPSensor.share.xml" xpath="//Manufacturer/Baggages/*" prefix="THP" />
