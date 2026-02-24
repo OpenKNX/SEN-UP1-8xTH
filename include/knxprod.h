@@ -18,7 +18,7 @@
 #define MAIN_FirmwareName "UP1 8xSensor (Dev)"
 #define MAIN_OpenKnxId 0xA1
 #define MAIN_ApplicationNumber 3
-#define MAIN_ApplicationVersion 24
+#define MAIN_ApplicationVersion 25
 #define MAIN_ApplicationEncoding iso-8859-15
 #define MAIN_ParameterSize 7319
 #define MAIN_MaxKoNumber 571

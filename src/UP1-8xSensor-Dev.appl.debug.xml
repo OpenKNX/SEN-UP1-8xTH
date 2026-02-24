@@ -9,7 +9,7 @@
         </CatalogSection>
       </Catalog>
       <ApplicationPrograms>
-        <op:version OpenKnxId="0xA1" ApplicationNumber="3" ApplicationVersion="24" ReplacesVersions="23 22 21 20 12 14 15 16 17 18 19" ApplicationRevision="0" FirmwareRevision="-1" />
+        <op:version OpenKnxId="0xA1" ApplicationNumber="3" ApplicationVersion="25" ReplacesVersions="25 23 22 21 20 12 14 15 16 17 18 19" ApplicationRevision="0" FirmwareRevision="-1" />
         <ApplicationProgram Id="%AID%" ProgramType="ApplicationProgram" MaskVersion="MV-07B0" Name="UP1 8xSensor-Dev" LoadProcedureStyle="MergedProcedure" PeiType="0" DefaultLanguage="de-DE" DynamicTableManagement="false" Linkable="true" MinEtsVersion="5.0" ContextHelpFile="%FILE-HELP-de%" IconFile="%FILE-ICONS%" IPConfig="Custom" ApplicationNumber="0" ApplicationVersion="0" ReplacesVersions="0">
           <Static>
             <Code>
