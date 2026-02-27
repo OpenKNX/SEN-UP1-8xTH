@@ -4,8 +4,8 @@
   <op:ETS
     OpenKnxId="0xA1"
     ApplicationNumber="3"
-    ApplicationVersion="1.9"
-    ReplacesVersions="1.9 1.7 1.6 1.5 1.4 0.12 0.14 0.15 1.0 1.1 1.2 1.3"
+    ApplicationVersion="1.10"
+    ReplacesVersions="1.9 1.8 1.7 1.6 1.5 1.4 0.12 0.14 0.15 1.0 1.1 1.2 1.3"
     ApplicationRevision="0"
     ProductName="UP1 8xSensor"
     BusCurrent="20"
