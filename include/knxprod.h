@@ -87,7 +87,7 @@
 #define BASE_Info1LedFunc                        80      // 16 Bits, Bit 15-0
 #define BASE_Info2LedFunc                        82      // 16 Bits, Bit 15-0
 #define BASE_Info3LedFunc                        84      // 16 Bits, Bit 15-0
-#define BASE_DefaultLedFunc                      85      // 1 Bit, Bit 7
+#define BASE_DefaultLedFunc                      86      // 1 Bit, Bit 7
 #define     BASE_DefaultLedFuncMask 0x80
 #define     BASE_DefaultLedFuncShift 7
 #define BASE_Dummy                               109      // uint8_t

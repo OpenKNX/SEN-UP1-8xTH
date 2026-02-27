@@ -3,7 +3,7 @@ f6111d3 v1 lib/knx https://github.com/OpenKNX/knx.git
 eca6977 v1 lib/OFM-ConfigTransfer https://github.com/OpenKNX/OFM-ConfigTransfer
 178f186 v1 lib/OFM-FileTransferModule https://github.com/OpenKNX/OFM-FileTransferModule.git
 2bc2557 v1 lib/OFM-LogicModule https://github.com/OpenKNX/OFM-LogicModule.git
-239c448 v1dev lib/OFM-THPSensorModule https://github.com/OpenKNX/OFM-THPSensorModule.git
+239c448 v1 lib/OFM-THPSensorModule https://github.com/OpenKNX/OFM-THPSensorModule.git
 034977c v1 lib/OFM-VirtualButton https://github.com/OpenKNX/OFM-VirtualButton.git
-bfe43f7 v1 lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
+3762bc1 v1 lib/OGM-Common https://github.com/OpenKNX/OGM-Common.git
 2af139a v1 lib/OGM-HardwareConfig https://github.com/OpenKNX/OGM-HardwareConfig.git
